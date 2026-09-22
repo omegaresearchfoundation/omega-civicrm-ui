@@ -437,3 +437,114 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
     padding: 0.75rem !important;
   }
 }
+
+/* ==========================================================
+   OMEGA RECORD COLUMNS — optional two-column record layout
+   Append AFTER the complete existing omega-ui.css.
+
+   Enable on a record card with BOTH classes:
+   omega-record-content omega-record-columns
+
+   Requires the working record-title / section / field styles.
+   Keeps the existing SearchKit HTML rewrites unchanged.
+   ========================================================== */
+
+/* Respond to the card width, including inside a popup. */
+.omega-record-content.omega-record-columns {
+  container-name: omega-record;
+  container-type: inline-size;
+}
+
+/* One column by default; use two when the card is wide enough.
+   Normal row flow preserves the display's field order. */
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-flow: row;
+  gap: 0.5rem 1rem;
+  align-items: stretch;
+}
+
+/* Let the grid control spacing, rather than field margins. */
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div {
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Labels above values leave space for two fields per row. */
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(> label),
+.omega-record-content.omega-record-columns dl.omega-record-kv {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0.25rem !important;
+  align-content: start;
+  min-width: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+/* These components always occupy a whole row. */
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(h1.omega-record-title),
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div.crm-search-col-type-buttons,
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div.omega-record-text,
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div.omega-record-wide {
+  grid-column: 1 / -1;
+}
+
+/* Keep the title divider; let the grid supply its bottom gap. */
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(h1.omega-record-title) {
+  margin: 0 0 0.5rem !important;
+}
+
+/* SearchKit 6.10.2 wraps rewritten HTML in:
+   div > span[ng-include] > span[ng-bind-html].
+
+   Flatten ONLY those neutral wrappers for section-start rows.
+   The h2 and dl then participate in the outer grid separately:
+   the heading spans both columns; the first field uses one.
+
+   Do not apply display:contents to h2, dl, dt, dd or controls. */
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(h2.omega-record-section-title),
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(h2.omega-record-section-title) > span,
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(h2.omega-record-section-title) > span > span:has(h2.omega-record-section-title) {
+  display: contents !important;
+}
+
+/* Section headings stand on their own full-width grid row. */
+.omega-record-content.omega-record-columns h2.omega-record-section-title {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 1rem 0 0.3rem !important;
+}
+
+.omega-record-content.omega-record-columns
+h2.omega-record-section-title--first {
+  margin-top: 0 !important;
+}
+
+/* The rewritten first field is an ordinary ONE-column item. */
+.omega-record-content.omega-record-columns dl.omega-record-kv {
+  grid-column: auto;
+}
+
+/* At least 48rem of usable card width: two fields side by side.
+   Narrow cards/popups keep the single-column fallback. */
+@container omega-record (min-width: 48rem) {
+  .omega-record-content.omega-record-columns
+  .crm-search-display-list-container > li {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
