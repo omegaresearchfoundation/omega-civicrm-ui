@@ -94,74 +94,128 @@
 }
 
 /* ==========================================================
-   PAGE TITLE
-   ========================================================== */
-
-body:has(.omega-record-page) h1 {
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-
-  border-bottom: 2px solid #0a9ab3;
-
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-/* ==========================================================
    RECORD DETAIL LIST
+   SearchKit List display — CiviCRM 6.10.2
+   Scoped to our record-content cards.
    ========================================================== */
 
-.omega-record-content crm-search-display-list table {
-  width: 100%;
 
-  border-collapse: separate !important;
-  border-spacing: 0 6px !important;
+/* Remove ordinary list spacing and markers */
+
+.omega-record-content .crm-search-display-list-container {
+  display: block !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 
-/* Remove existing row borders */
+/* Each list item represents one record */
 
-.omega-record-content crm-search-display-list tr,
-.omega-record-content crm-search-display-list th,
-.omega-record-content crm-search-display-list td {
+.omega-record-content .crm-search-display-list-container > li {
+  display: block !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
   border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 
-/* Turn each field into a subtle row */
+/* Remove existing separators from field rows */
 
-.omega-record-content crm-search-display-list tr > * {
-  padding: 0.7rem 0.85rem !important;
-
-  background: rgba(255, 255, 255, 0.035);
-
-  vertical-align: top;
+.omega-record-content .crm-search-display-list-container > li > div {
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 
-/* Label column */
+/* Labelled fields: two-column layout with a subtle background */
 
-.omega-record-content crm-search-display-list tr > :first-child {
-  width: 165px;
-  min-width: 165px;
+.omega-record-content .crm-search-display-list-container > li > div:has(> label) {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 0.3rem 1.25rem;
+  align-items: start;
 
-  border-radius: 7px 0 0 7px;
+  margin: 0 0 0.5rem !important;
+  padding: 0.8rem 1rem !important;
 
-  color: rgba(255, 255, 255, 0.72);
+  border-radius: var(--omega-radius-sm);
+  background: var(--omega-surface) !important;
+}
+
+
+/* Field labels */
+
+.omega-record-content .crm-search-display-list-container > li > div > label {
+  display: block !important;
+  float: none !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  color: var(--omega-muted) !important;
+  font-size: 0.9rem;
   font-weight: 600;
+  line-height: 1.5;
+  text-align: left !important;
+  white-space: normal !important;
 }
 
 
-/* Value column */
+/* Field values — only the immediate value wrapper */
 
-.omega-record-content crm-search-display-list tr > :last-child {
-  border-radius: 0 7px 7px 0;
+.omega-record-content .crm-search-display-list-container > li > div:has(> label) > span {
+  display: block !important;
+  float: none !important;
+
+  width: auto !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 
-/* Slight response on hover */
+/* Unlabelled rows, including the existing action buttons */
 
-.omega-record-content crm-search-display-list tr:hover > * {
-  background: rgba(255, 255, 255, 0.055);
+.omega-record-content .crm-search-display-list-container > li > div:not(:has(> label)) {
+  display: block !important;
+  margin: 0.9rem 0 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+}
+
+
+/* Hide the toolbar only when it contains no controls.
+   Actual search buttons, counts and menus remain visible. */
+
+.omega-record-content .crm-search-display-list > .form-inline:not(:has(*)) {
+  display: none;
+}
+
+
+/* Stack labels above values on narrower screens */
+
+@media (max-width: 720px) {
+  .omega-record-content .crm-search-display-list-container > li > div:has(> label) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+    padding: 0.75rem !important;
+  }
 }
