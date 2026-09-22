@@ -47,3 +47,8 @@
   padding: 20px;
   outline: 3px dashed #0a9ab3;
 }
+
+/* TEMPORARY LOAD TEST */
+.crm-container {
+  box-shadow: inset 0 0 0 8px #ff00ff !important;
+}
