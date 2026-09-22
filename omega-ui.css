@@ -92,3 +92,76 @@
 .omega-record-content {
   padding: var(--omega-space-lg);
 }
+
+/* ==========================================================
+   PAGE TITLE
+   ========================================================== */
+
+body:has(.omega-record-page) h1 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+
+  border-bottom: 2px solid #0a9ab3;
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================
+   RECORD DETAIL LIST
+   ========================================================== */
+
+.omega-record-content crm-search-display-list table {
+  width: 100%;
+
+  border-collapse: separate !important;
+  border-spacing: 0 6px !important;
+}
+
+
+/* Remove existing row borders */
+
+.omega-record-content crm-search-display-list tr,
+.omega-record-content crm-search-display-list th,
+.omega-record-content crm-search-display-list td {
+  border: 0 !important;
+}
+
+
+/* Turn each field into a subtle row */
+
+.omega-record-content crm-search-display-list tr > * {
+  padding: 0.7rem 0.85rem !important;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  vertical-align: top;
+}
+
+
+/* Label column */
+
+.omega-record-content crm-search-display-list tr > :first-child {
+  width: 165px;
+  min-width: 165px;
+
+  border-radius: 7px 0 0 7px;
+
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+}
+
+
+/* Value column */
+
+.omega-record-content crm-search-display-list tr > :last-child {
+  border-radius: 0 7px 7px 0;
+}
+
+
+/* Slight response on hover */
+
+.omega-record-content crm-search-display-list tr:hover > * {
+  background: rgba(255, 255, 255, 0.055);
+}
