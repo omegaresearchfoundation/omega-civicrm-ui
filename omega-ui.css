@@ -1,9 +1,40 @@
 /* ==========================================================
    OMEGA CIVICRM UI
-   Temporary external stylesheet for CiviCRM custom styling
    ========================================================== */
 
-/* Test rule */
-.omega-test {
-  outline: 2px solid #0a9ab3;
+
+/* ---------- Record pages ---------- */
+
+.omega-record-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ---------- Cards ---------- */
+
+.omega-record-page .omega-card {
+  margin-top: 1rem;
+  padding: 1.5rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+
+/* Remove unnecessary fieldset chrome inside our cards */
+
+.omega-record-page .omega-card fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+/* ---------- Tabs ---------- */
+
+.omega-record-page .omega-tabs {
+  margin-top: 1rem;
 }
