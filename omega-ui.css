@@ -1,0 +1,9 @@
+/* ==========================================================
+   OMEGA CIVICRM UI
+   Temporary external stylesheet for CiviCRM custom styling
+   ========================================================== */
+
+/* Test rule */
+.omega-test {
+  outline: 2px solid #0a9ab3;
+}
