@@ -2,6 +2,32 @@
    OMEGA CIVICRM UI
    ========================================================== */
 
+:root {
+  --omega-accent: #0a9ab3;
+
+  --omega-radius-sm: 6px;
+  --omega-radius-md: 10px;
+
+  --omega-space-xs: 0.4rem;
+  --omega-space-sm: 0.75rem;
+  --omega-space-md: 1rem;
+  --omega-space-lg: 1.5rem;
+  --omega-space-xl: 2rem;
+
+  --omega-border: rgba(255, 255, 255, 0.10);
+  --omega-surface: rgba(255, 255, 255, 0.035);
+  --omega-surface-hover: rgba(255, 255, 255, 0.06);
+  --omega-muted: rgba(255, 255, 255, 0.65);
+}
+
+
+/* ---------- Generic page ---------- */
+
+.omega-page {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 
 /* ---------- Record pages ---------- */
 
@@ -11,44 +37,58 @@
 }
 
 
+/* ---------- Page header ---------- */
+
+.omega-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--omega-space-lg);
+
+  margin-bottom: var(--omega-space-lg);
+  padding-bottom: var(--omega-space-md);
+
+  border-bottom: 1px solid var(--omega-border);
+}
+
+.omega-page-kicker {
+  margin-bottom: var(--omega-space-xs);
+
+  color: var(--omega-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.omega-page-title {
+  margin: 0;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.omega-page-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--omega-space-sm);
+}
+
+
 /* ---------- Cards ---------- */
 
-.omega-record-page .omega-card {
-  margin-top: 1rem;
-  padding: 1.5rem;
+.omega-card {
+  border: 1px solid var(--omega-border);
+  border-radius: var(--omega-radius-md);
 
-  border: 4px solid #0a9ab3;
-  border-radius: 16px;
+  background: var(--omega-surface);
 
-  background: rgba(10, 154, 179, 0.18);
-
-  box-shadow: 0 0 0 3px rgba(10, 154, 179, 0.20);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-
-/* Remove unnecessary fieldset chrome inside our cards */
-
-.omega-record-page .omega-card fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-
-/* ---------- Tabs ---------- */
-
-.omega-record-page .omega-tabs {
-  margin-top: 1rem;
-}
-
-.omega-record-page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-  outline: 3px dashed #0a9ab3;
-}
-
-/* TEMPORARY LOAD TEST */
-.crm-container {
-  box-shadow: inset 0 0 0 8px #ff00ff !important;
+.omega-record-content {
+  padding: var(--omega-space-lg);
 }
