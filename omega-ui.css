@@ -300,4 +300,140 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
     font-size: 1.35rem !important;
   }
 }
+
+
+/* ==========================================================
+   OMEGA RECORD SECTIONS — v1
+   Included in this combined omega-ui.css stylesheet.
+
+   Requires the existing Omega record/card styles.
+   Adds only opt-in section headings, rewritten first rows,
+   and full-width narrative fields. No image-grid changes.
+   ========================================================== */
+
+/* A heading and the first field of its section share one
+   SearchKit HTML column. Reset that column's outer wrapper. */
+
+.omega-record-content
+.crm-search-display-list-container > li > div:has(.omega-record-section-title) {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box;
+
+  margin: 1.75rem 0 0.5rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Do not add a second large gap immediately below the case title. */
+
+.omega-record-content
+.crm-search-display-list-container > li > div:has(.omega-record-section-title--first) {
+  margin-top: 0 !important;
+}
+
+/* Let the rewritten content occupy the complete row. */
+
+.omega-record-content
+.crm-search-display-list-container > li > div:has(.omega-record-section-title) > span {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Genuine section headings, subordinate to omega-record-title. */
+
+.omega-record-content h2.omega-record-section-title {
+  margin: 0 0 0.8rem !important;
+  padding: 0.15rem 0 0.15rem 0.7rem !important;
+  border: 0 !important;
+  border-left: 3px solid var(--omega-accent, #0a9ab3) !important;
+
+  background: transparent !important;
+  color: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* Label/value pair inside a rewritten first field.
+   Match the established native SearchKit field-row layout. */
+
+.omega-record-content dl.omega-record-kv {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 0.3rem 1.25rem;
+  align-items: start;
+  box-sizing: border-box;
+
+  width: 100%;
+  margin: 0 !important;
+  padding: 0.8rem 1rem !important;
+  border: 0 !important;
+  border-radius: var(--omega-radius-sm, 6px);
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035)) !important;
+  box-shadow: none !important;
+}
+
+.omega-record-content dl.omega-record-kv > dt,
+.omega-record-content dl.omega-record-kv > dd {
+  display: block !important;
+  float: none !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  line-height: 1.5;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+.omega-record-content dl.omega-record-kv > dt {
+  color: var(--omega-muted, rgba(255, 255, 255, 0.65)) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.omega-record-content dl.omega-record-kv > dd {
+  color: inherit;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* Opt-in long text: retain the original native field output,
+   but place its label above its value instead of beside it. */
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0.65rem !important;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text > span {
+  line-height: 1.65;
+}
+
+/* Match the existing narrow-screen layout. */
+
+@media (max-width: 720px) {
+  .omega-record-content dl.omega-record-kv {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+    padding: 0.75rem !important;
+  }
 }
