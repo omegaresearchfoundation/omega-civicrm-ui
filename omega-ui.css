@@ -1126,6 +1126,11 @@ div:has(.omega-record-sources-title) + div + div {
   margin-bottom: 0;
 }
 
+/* Align a neighbouring ordinary field with controls inside a bordered repeat. */
+.omega-form-page .omega-form-align-with-repeat {
+  padding-top: calc(0.8rem + 1px);
+}
+
 .omega-form-page .omega-form-repeat > div.ng-scope + div.ng-scope {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
@@ -1213,6 +1218,10 @@ div:has(.omega-record-sources-title) + div + div {
   .omega-form-page .omega-form-grid--6,
   .omega-form-page .omega-form-repeat--country > div.ng-scope > ng-transclude {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .omega-form-page .omega-form-align-with-repeat {
+    padding-top: 0;
   }
 
   .omega-form-page .omega-form-panel {
