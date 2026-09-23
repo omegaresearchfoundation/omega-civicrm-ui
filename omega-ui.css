@@ -1108,6 +1108,10 @@ div:has(.omega-record-sources-title) + div + div {
   align-items: end;
 }
 
+.omega-form-page .omega-form-repeat--country > div.ng-scope > ng-transclude > af-field .form-group {
+  margin-bottom: 0;
+}
+
 .omega-form-page .omega-form-repeat > div.ng-scope + div.ng-scope {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
