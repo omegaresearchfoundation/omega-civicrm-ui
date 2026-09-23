@@ -1080,7 +1080,7 @@ div:has(.omega-record-sources-title) + div + div {
 }
 
 .omega-form-page .omega-form-section--compact .omega-form-narrative textarea {
-  min-height: 8rem;
+  min-height: 7rem;
 }
 
 .omega-form-page :is(input, textarea, select):focus,
@@ -1103,9 +1103,16 @@ div:has(.omega-record-sources-title) + div + div {
 
 .omega-form-page .omega-form-repeat--country > div.ng-scope > ng-transclude {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(10rem, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem 1rem;
   align-items: end;
+}
+
+.omega-form-page .omega-form-repeat--country {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .omega-form-page .omega-form-repeat--country > div.ng-scope > ng-transclude > af-field .form-group {
@@ -1129,11 +1136,11 @@ div:has(.omega-record-sources-title) + div + div {
 
 .omega-form-page .omega-form-related-card {
   min-width: 0;
-  height: 100%;
-  padding: 1rem;
-  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
-  border-radius: var(--omega-radius-sm, 6px);
-  background: rgba(255, 255, 255, 0.018);
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .omega-form-page .omega-form-related-card > h4.af-title {
@@ -1149,10 +1156,29 @@ div:has(.omega-record-sources-title) + div + div {
   background: transparent;
 }
 
+.omega-form-page .omega-form-section--compact .omega-form-repeat .af-repeat-add-btn,
+.omega-form-page .omega-form-section--compact .omega-form-repeat .af-repeat-copy-btn,
+.omega-form-page .omega-form-inline-actions .btn-primary {
+  min-height: 0;
+  padding: 0.35rem 0.6rem !important;
+  border-color: rgba(10, 154, 179, 0.55) !important;
+  background: transparent !important;
+  color: #62c8d9 !important;
+  box-shadow: none !important;
+}
+
+.omega-form-page .omega-form-section--compact .omega-form-repeat .af-repeat-add-btn:hover,
+.omega-form-page .omega-form-section--compact .omega-form-repeat .af-repeat-copy-btn:hover,
+.omega-form-page .omega-form-inline-actions .btn-primary:hover {
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  background: rgba(10, 154, 179, 0.12) !important;
+  color: #fff !important;
+}
+
 .omega-form-page .omega-form-inline-actions {
   display: flex;
-  justify-content: flex-end;
-  margin-top: var(--omega-space-md, 1rem);
+  justify-content: flex-start;
+  margin-top: 0.75rem;
 }
 
 .omega-form-page .omega-form-upload-panel {
