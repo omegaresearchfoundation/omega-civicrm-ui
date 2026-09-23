@@ -1119,7 +1119,7 @@ div:has(.omega-record-sources-title) + div + div {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem 1rem;
-  align-items: end;
+  align-items: start;
 }
 
 .omega-form-page .omega-form-repeat--country > div.ng-scope > ng-transclude > af-field .form-group {
