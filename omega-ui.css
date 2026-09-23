@@ -786,3 +786,46 @@ h2.omega-record-section-title--first {
   display: none !important;
 }
 
+/* ==========================================================
+   NARRATIVE AND SOURCE WIDTH CORRECTIONS
+   Append after the existing record-refinement rules.
+   ========================================================== */
+
+
+/* Details text: use the full width of its existing panel. */
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text > span {
+  max-width: none !important;
+}
+
+
+/* Full-width fields: recognise the class on either the outer
+   field or an element inside it, including a source link. */
+
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li >
+div:is(
+  .omega-record-wide,
+  .omega-record-source,
+  :has(.omega-record-wide, .omega-record-source)
+) {
+  grid-column: 1 / -1 !important;
+  min-width: 0 !important;
+}
+
+
+/* A rewritten section-start field may have a display:contents
+   wrapper. In that case, its DL is the actual grid item. */
+
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li >
+div:is(
+  .omega-record-wide,
+  .omega-record-source,
+  :has(.omega-record-wide, .omega-record-source)
+) dl.omega-record-kv {
+  grid-column: 1 / -1 !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
