@@ -697,12 +697,12 @@ h2.omega-record-section-title--first {
 .omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] {
   display: flex !important;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.3rem;
+  align-items: flex-end;
+  gap: 0.4rem;
   width: 100%;
   box-sizing: border-box;
   margin: 0 0 1rem !important;
-  padding: 0.25rem 0 0.55rem !important;
+  padding: 0.25rem 0 0 !important;
   list-style: none !important;
   background: transparent !important;
   border: 0 !important;
@@ -739,12 +739,12 @@ h2.omega-record-section-title--first {
   min-height: 2.65rem;
   margin: 0 !important;
   padding: 0.6rem 0.9rem !important;
-  border: 0 !important;
-  border-bottom: 2px solid transparent !important;
-  border-radius: var(--omega-radius-sm, 6px) !important;
-  background: transparent !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-bottom: 3px solid transparent !important;
+  border-radius: var(--omega-radius-sm, 6px) var(--omega-radius-sm, 6px) 0 0 !important;
+  background: rgba(255, 255, 255, 0.025) !important;
   box-shadow: none !important;
-  color: var(--omega-muted, rgba(255, 255, 255, 0.65)) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
   font-size: 0.95rem !important;
   font-weight: 600 !important;
   line-height: 1.4 !important;
@@ -753,14 +753,17 @@ h2.omega-record-section-title--first {
 }
 
 .omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button:not(.active) > a:hover {
-  color: inherit !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.20) !important;
+  border-bottom-color: transparent !important;
   background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
 }
 
 .omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button.active > a {
   color: var(--omega-accent, #0a9ab3) !important;
+  border-color: rgba(10, 154, 179, 0.55) !important;
   border-bottom-color: var(--omega-accent, #0a9ab3) !important;
-  background: rgba(10, 154, 179, 0.10) !important;
+  background: rgba(10, 154, 179, 0.14) !important;
 }
 
 /* Keep a visible keyboard focus indicator, including active tabs. */
@@ -828,4 +831,17 @@ div:is(
   grid-column: 1 / -1 !important;
   min-width: 0 !important;
   max-width: none !important;
+}
+
+
+/* Transfers: SearchKit 6.10.2 drops a linked field's style class when the
+   field is empty. Keep the Attachments row full width by anchoring to the
+   preserved source heading and exact SearchKit display. */
+
+.omega-record-content.omega-record-columns
+crm-search-display-list[search-name="Evidence_of_trade_and_use_2nxl"][display-name="Evidence_of_trade_and_use_List_1"]
+.crm-search-display-list-container > li >
+div:has(.omega-record-sources-title) + div + div {
+  grid-column: 1 / -1 !important;
+  min-width: 0 !important;
 }
