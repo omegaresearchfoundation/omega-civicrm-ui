@@ -548,3 +548,241 @@ h2.omega-record-section-title--first {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* ==========================================================
+   OMEGA RECORD REFINEMENTS v2
+   Narrative readability, dash placeholders, source priority,
+   quieter administrative metadata and record-page tabs.
+
+   APPEND ONCE to the existing omega-ui.css, AFTER all existing
+   record-section and two-column rules. This is NOT a complete
+   replacement stylesheet. Keep the existing Afform markup.
+
+   SearchKit field configuration:
+   Details: omega-record-text (Always), Show Linebreaks on.
+   Source: omega-record-source (Always); keep existing links.
+   Created/Modified Date: omega-record-meta (Always).
+   Ordinary empty values: native Empty placeholder = em dash.
+   Text field dimming: omega-record-empty if that field IS EMPTY.
+   Numeric field dimming: use IS NULL, so zero stays a value.
+   Rewritten empty values: preserve the entire heading/rewrite;
+   put the em dash in <span class="omega-record-empty-value">.
+
+   Optional standalone source heading:
+   <h2 class="omega-record-section-title omega-record-sources-title">
+     Sources and record information
+   </h2>
+   Place the ordinary Source field IMMEDIATELY after this heading.
+   The next-field selector handles an empty linked Source where
+   SearchKit does not apply its class to the outer field element.
+
+   No generated placeholder text, no stored-data changes,
+   no image-grid or submit/popup behaviour changes.
+   ========================================================== */
+
+/* 1. Narrative: keep the field wide; limit the reading measure. */
+.omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div.omega-record-text {
+  grid-column: 1 / -1 !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0.6rem !important;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text > span {
+  display: block !important;
+  width: 100% !important;
+  max-width: 85ch;
+  min-width: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text .crm-search-field-value {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.75 !important;
+  white-space: pre-line !important;
+}
+
+/* These rules only affect paragraph/quotation markup that already
+   exists in the displayed HTML. They do not add paragraphs. */
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text p {
+  margin: 0 0 0.9em !important;
+  line-height: 1.75 !important;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-text blockquote {
+  margin: 0.75em 0 !important;
+  padding: 0.1em 0 0.1em 1em !important;
+  border: 0 !important;
+  border-left: 2px solid var(--omega-accent, #0a9ab3) !important;
+  line-height: 1.75 !important;
+}
+
+/* 2. Missing values: the actual dash comes from SearchKit.
+   Never infer emptiness from a numeric value using CSS. */
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-empty:not(:has(h1, h2)),
+.omega-record-content dl.omega-record-kv:has(.omega-record-empty-value) {
+  background: rgba(255, 255, 255, 0.015) !important;
+}
+
+.omega-record-content .omega-record-empty .crm-search-field-value,
+.omega-record-content .omega-record-empty-value {
+  color: var(--omega-muted, rgba(255, 255, 255, 0.65)) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+
+/* 3. Source layout. SearchKit can put a style class on a link
+   rather than its field DIV. Handle both; retain the link.
+   The source-heading sibling selector also covers empty sources. */
+.omega-record-content
+.crm-search-display-list-container > li > div:is(.omega-record-source, :has(.omega-record-source)),
+.omega-record-content
+.crm-search-display-list-container > li > div:has(.omega-record-sources-title) + div {
+  grid-column: 1 / -1 !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0.55rem !important;
+  min-width: 0 !important;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div:is(.omega-record-source, :has(.omega-record-source)) > span,
+.omega-record-content
+.crm-search-display-list-container > li > div:has(.omega-record-sources-title) + div > span {
+  line-height: 1.65 !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div:is(.omega-record-source, :has(.omega-record-source)) a,
+.omega-record-content
+.crm-search-display-list-container > li > div:has(.omega-record-sources-title) + div a {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* 4. Created/modified dates: quieter, but still readable. */
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-meta {
+  padding: 0.65rem 1rem !important;
+  background: transparent !important;
+}
+
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-meta > span,
+.omega-record-content
+.crm-search-display-list-container > li > div.omega-record-meta .crm-search-field-value {
+  color: var(--omega-muted, rgba(255, 255, 255, 0.65)) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+/* 5. Record-page tabs. Preserve existing tab behaviour and text.
+   All selectors are scoped to opt-in Omega record pages. */
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 1rem !important;
+  padding: 0.25rem 0 0.55rem !important;
+  list-style: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Remove Bootstrap clearfix pseudo-elements from the flex row. */
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"]::before,
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"]::after {
+  display: none !important;
+}
+
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button {
+  display: block !important;
+  flex: 0 1 auto;
+  float: none !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  box-sizing: border-box;
+  min-height: 2.65rem;
+  margin: 0 !important;
+  padding: 0.6rem 0.9rem !important;
+  border: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: var(--omega-radius-sm, 6px) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--omega-muted, rgba(255, 255, 255, 0.65)) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  white-space: normal;
+}
+
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button:not(.active) > a:hover {
+  color: inherit !important;
+  background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
+}
+
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button.active > a {
+  color: var(--omega-accent, #0a9ab3) !important;
+  border-bottom-color: var(--omega-accent, #0a9ab3) !important;
+  background: rgba(10, 154, 179, 0.10) !important;
+}
+
+/* Keep a visible keyboard focus indicator, including active tabs. */
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a:focus-visible {
+  outline: 2px solid var(--omega-accent, #0a9ab3) !important;
+  outline-offset: 2px;
+}
+
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a > i.crm-i {
+  margin: 0 !important;
+  color: inherit !important;
+}
+
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge {
+  float: none !important;
+  margin: 0 !important;
+  background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
+  color: inherit !important;
+}
+
+/* Empty badges only: a count of 0 remains visible. */
+.omega-record-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge:empty {
+  display: none !important;
+}
+
