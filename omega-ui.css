@@ -1638,7 +1638,7 @@ details[af-title]
   display: block !important;
   margin: 0 0 1rem !important;
   padding: 0 0 0.55rem !important;
-  cursor: default;
+  cursor: pointer;
   color: #fff !important;
   border-bottom: 1px solid rgba(10, 154, 179, 0.38);
   font-size: 1.08rem !important;
@@ -1650,8 +1650,21 @@ afsearch-evidence-of-trade-and-use-search-v2
 details.af-collapsible
 details[af-title]
 > summary.af-title::before {
-  display: none !important;
-  content: none !important;
+  display: inline-block !important;
+  content: "\f054" !important;
+  margin-right: 0.45rem;
+  color: var(--omega-accent, #0a9ab3);
+  font-family: "Font Awesome 6 Free", "FontAwesome";
+  font-size: 0.78rem;
+  font-weight: 900;
+  transition: transform 0.15s ease;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+details[af-title][open]
+> summary.af-title::before {
+  transform: rotate(90deg);
 }
 
 afsearch-evidence-of-trade-and-use-search-v2
