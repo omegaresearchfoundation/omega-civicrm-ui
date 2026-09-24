@@ -1346,21 +1346,21 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-:is(.omega-company-search, .omega-product-search)
+:is(.omega-company-search, .omega-product-search, .omega-transfer-search)
   .omega-search-filter-body
   > .omega-form-grid {
   align-items: start;
   gap: var(--omega-space-md, 1rem);
 }
 
-:is(.omega-company-search, .omega-product-search)
+:is(.omega-company-search, .omega-product-search, .omega-transfer-search)
   .omega-search-filter-body
   > .omega-form-grid
   + .omega-form-grid {
   margin-top: var(--omega-space-md, 1rem);
 }
 
-:is(.omega-company-search, .omega-product-search) .omega-form-section {
+:is(.omega-company-search, .omega-product-search, .omega-transfer-search) .omega-form-section {
   margin: 0 !important;
 }
 
@@ -1470,6 +1470,15 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
 
 .omega-product-search .omega-search-results td[title="View company"] > a {
   font-weight: 600;
+}
+
+.omega-transfer-search .omega-search-results table {
+  min-width: 78rem;
+}
+
+.omega-transfer-search .omega-search-results .omega-search-primary {
+  color: #fff;
+  font-weight: 700;
 }
 
 .omega-search-page .omega-search-results {
