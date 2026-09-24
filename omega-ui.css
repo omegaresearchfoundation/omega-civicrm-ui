@@ -876,7 +876,8 @@ div:has(.omega-record-sources-title) + div + div {
 }
 
 /* Native Afform tabs: retain ng-click, active state, icons and badges. */
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] {
   display: flex !important;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -892,12 +893,15 @@ div:has(.omega-record-sources-title) + div + div {
   box-shadow: none !important;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"]::before,
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"]::after {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"]::before,
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"]::after {
   display: none !important;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button {
   display: block !important;
   flex: 0 1 auto;
   float: none !important;
@@ -910,7 +914,8 @@ div:has(.omega-record-sources-title) + div + div {
   box-shadow: none !important;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a {
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -931,38 +936,44 @@ div:has(.omega-record-sources-title) + div + div {
   white-space: normal;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button:not(.active) > a:hover {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button:not(.active) > a:hover {
   color: #fff !important;
   border-color: rgba(255, 255, 255, 0.20) !important;
   border-bottom-color: transparent !important;
   background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button.active > a {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button.active > a {
   color: var(--omega-accent, #0a9ab3) !important;
   border-color: rgba(10, 154, 179, 0.55) !important;
   border-bottom-color: var(--omega-accent, #0a9ab3) !important;
   background: rgba(10, 154, 179, 0.14) !important;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a:focus-visible {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a:focus-visible {
   outline: 2px solid var(--omega-accent, #0a9ab3) !important;
   outline-offset: 2px;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a > i.crm-i {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a > i.crm-i {
   margin: 0 !important;
   color: inherit !important;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge {
   float: none !important;
   margin: 0 !important;
   background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
   color: inherit !important;
 }
 
-.omega-form-page ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge:empty {
+:is(.omega-form-page, afsearch-evidence-of-trade-and-use-search-v2)
+ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge:empty {
   display: none !important;
 }
 
@@ -1346,21 +1357,21 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-:is(.omega-company-search, .omega-product-search, .omega-transfer-search)
+:is(.omega-company-search, .omega-product-search)
   .omega-search-filter-body
   > .omega-form-grid {
   align-items: start;
   gap: var(--omega-space-md, 1rem);
 }
 
-:is(.omega-company-search, .omega-product-search, .omega-transfer-search)
+:is(.omega-company-search, .omega-product-search)
   .omega-search-filter-body
   > .omega-form-grid
   + .omega-form-grid {
   margin-top: var(--omega-space-md, 1rem);
 }
 
-:is(.omega-company-search, .omega-product-search, .omega-transfer-search) .omega-form-section {
+:is(.omega-company-search, .omega-product-search) .omega-form-section {
   margin: 0 !important;
 }
 
@@ -1472,13 +1483,292 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   font-weight: 600;
 }
 
-.omega-transfer-search .omega-search-results table {
-  min-width: 78rem;
+/* Evidence of trade and use search retains its existing Search/Map Afform.
+   Scope the shared treatment to the generated form element so the embedded map
+   and every query/filter binding remain untouched. */
+afsearch-evidence-of-trade-and-use-search-v2 {
+  display: block;
+  width: 100%;
+  max-width: none;
 }
 
-.omega-transfer-search .omega-search-results .omega-search-primary {
+body:has(afsearch-evidence-of-trade-and-use-search-v2)
+h1.title.crm-page-title {
+  margin: 0 0 0.85rem !important;
+  padding: 0 0 0.22rem !important;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.65);
+  color: #fff !important;
+  font-size: 1.75rem !important;
+  line-height: 1.2 !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset] {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible {
+  margin: 0 0 0.8rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible
+> summary {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto;
+  min-height: 34px;
+  margin: 0 !important;
+  padding: 0.48rem 0.72rem !important;
+  list-style: none;
+  cursor: pointer;
+  color: #f1f4f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.055) !important;
+  box-shadow: none !important;
+  font-size: 0.86rem !important;
+  font-weight: 600;
+  line-height: 1;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible
+> summary::before {
+  display: none !important;
+  content: none !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible
+> summary::after {
+  content: "Filters";
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible
+> summary:hover,
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible[open]
+> summary {
+  color: #fff !important;
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  background: rgba(10, 154, 179, 0.12) !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible
+> summary
+.fa-filter {
+  margin: 0 !important;
+  color: var(--omega-accent, #0a9ab3);
+  font-size: 0.9rem;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+af-tab[title="Search"]
+> div[ng-transclude]
+> div[af-fieldset]
+> details.af-collapsible
+> .af-container {
+  margin-top: 0.75rem;
+  padding: 1rem !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 4px;
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035)) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+> .af-container
+> .af-layout-cols {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+details[af-title] {
+  display: block !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+details[af-title]
+> summary.af-title {
+  display: block !important;
+  margin: 0 0 1rem !important;
+  padding: 0 0 0.55rem !important;
+  cursor: default;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.38);
+  font-size: 1.08rem !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+details[af-title]
+> summary.af-title::before {
+  display: none !important;
+  content: none !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+details[af-title]
+> :not(summary) {
+  display: block !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+details[af-title]
+.af-layout-cols {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 af-field,
+afsearch-evidence-of-trade-and-use-search-v2 .crm-af-field,
+afsearch-evidence-of-trade-and-use-search-v2 .form-control,
+afsearch-evidence-of-trade-and-use-search-v2 .select2-container {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+crm-search-display-table[display-name="Evidence_of_trade_and_use_search"] {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0 !important;
+  padding: 1rem !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  border-radius: var(--omega-radius-md, 10px);
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035));
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 table {
+  width: 100% !important;
+  min-width: 78rem;
+  max-width: none !important;
+  margin-bottom: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  background: transparent !important;
+  font-size: 13px;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 thead th {
+  padding: 0.75rem !important;
+  color: #fff !important;
+  border-top: 0 !important;
+  border-bottom: 2px solid rgba(10, 154, 179, 0.65) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+  vertical-align: bottom !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 tbody td {
+  padding: 0.85rem 0.75rem !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  background: transparent !important;
+  font-size: 13px !important;
+  line-height: 1.45;
+  vertical-align: top !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+tbody td[data-field-name="subject"] {
   color: #fff;
   font-weight: 700;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 tbody tr:hover > td {
+  background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 tbody tr:last-child > td {
+  border-bottom: 0 !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2 .btn-warning {
+  color: #fff !important;
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  background: var(--omega-accent, #0a9ab3) !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+a[href*="transfer_view_v2"]
+.fa-external-link::before {
+  content: "\f06e";
+}
+
+@media (max-width: 900px) {
+  afsearch-evidence-of-trade-and-use-search-v2
+  details.af-collapsible
+  > .af-container
+  > .af-layout-cols,
+  afsearch-evidence-of-trade-and-use-search-v2
+  details.af-collapsible
+  details[af-title]
+  .af-layout-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .omega-search-page .omega-search-results {
