@@ -1441,13 +1441,13 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   box-sizing: border-box;
   width: 10rem !important;
   max-width: none !important;
-  height: 7.5rem !important;
-  padding: 0.25rem;
+  height: 10rem !important;
+  padding: 0;
   object-fit: contain !important;
   object-position: center;
-  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
-  border-radius: 4px;
-  background: #0a0a0a;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .omega-product-search
