@@ -1339,7 +1339,8 @@ div:has(.omega-record-sources-title) + div + div {
 .omega-search-page .omega-search-results thead th {
   padding: 0.75rem !important;
   color: #fff !important;
-  font-weight: 650 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
   vertical-align: bottom !important;
   border-top: 0 !important;
   border-bottom: 2px solid rgba(10, 154, 179, 0.65) !important;
@@ -1348,6 +1349,7 @@ div:has(.omega-record-sources-title) + div + div {
 
 .omega-search-page .omega-search-results tbody td {
   padding: 0.85rem 0.75rem !important;
+  font-size: 13px !important;
   line-height: 1.45;
   vertical-align: top !important;
   border-top: 0 !important;
