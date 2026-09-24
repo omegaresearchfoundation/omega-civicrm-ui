@@ -1007,7 +1007,7 @@ div:has(.omega-record-sources-title) + div + div {
 .omega-form-page .omega-form-grid {
   display: grid !important;
   align-items: start;
-  gap: 1rem 1.25rem;
+  gap: 1.25rem;
   width: 100%;
   min-width: 0;
 }
