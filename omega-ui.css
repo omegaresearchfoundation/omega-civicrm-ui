@@ -1387,43 +1387,13 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   background: transparent !important;
 }
 
-.omega-company-search .omega-search-primary {
+.omega-company-search
+  .omega-search-results
+  tbody
+  td
+  > a[href*="civicrm%2Fcontact%2Fview"] {
   color: #fff;
   font-weight: 700;
-}
-
-.omega-company-search .omega-company-role {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  min-height: 1.75rem;
-}
-
-.omega-company-search .omega-company-role .crm-i {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--omega-accent, #0a9ab3);
-  border: 1px solid rgba(10, 154, 179, 0.45);
-  border-radius: 4px;
-  background: rgba(10, 154, 179, 0.10);
-  font-size: 0.82rem;
-}
-
-.omega-company-search
-  .omega-company-role[data-role*="Manufactures"]
-  .omega-company-role__manufacturer,
-.omega-company-search
-  .omega-company-role[data-role*="Supplies"]
-  .omega-company-role__supplier {
-  display: inline-flex;
-}
-
-.omega-company-search .omega-company-role:not([data-role*="Manufactures"]):not([data-role*="Supplies"])::before {
-  content: "\2014";
-  color: var(--omega-muted, #aab3bb);
 }
 
 .omega-company-search .omega-search-results a:has(.fa-globe) {
