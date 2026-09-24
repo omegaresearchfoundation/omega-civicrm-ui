@@ -1359,6 +1359,10 @@ div:has(.omega-record-sources-title) + div + div {
   line-height: 1.5;
 }
 
+.omega-search-page .omega-search-detail-preview:has(+ .omega-search-readmore[open]) {
+  display: none;
+}
+
 .omega-search-page .omega-search-readmore {
   margin-top: 0.45rem;
 }
