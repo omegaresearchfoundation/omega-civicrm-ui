@@ -1346,20 +1346,25 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.omega-company-search .omega-search-filter-body > .omega-form-grid {
+:is(.omega-company-search, .omega-product-search)
+  .omega-search-filter-body
+  > .omega-form-grid {
   align-items: start;
   gap: var(--omega-space-md, 1rem);
 }
 
-.omega-company-search .omega-search-filter-body > .omega-form-grid + .omega-form-grid {
+:is(.omega-company-search, .omega-product-search)
+  .omega-search-filter-body
+  > .omega-form-grid
+  + .omega-form-grid {
   margin-top: var(--omega-space-md, 1rem);
 }
 
-.omega-company-search .omega-form-section {
+:is(.omega-company-search, .omega-product-search) .omega-form-section {
   margin: 0 !important;
 }
 
-.omega-company-search .omega-search-subfilters {
+:is(.omega-company-search, .omega-product-search) .omega-search-subfilters {
   grid-column: 1 / -1;
   margin-top: var(--omega-space-sm, 0.75rem) !important;
   padding: var(--omega-space-sm, 0.75rem) !important;
@@ -1368,18 +1373,24 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   background: transparent !important;
 }
 
-.omega-company-search .omega-search-subfilters > summary {
+:is(.omega-company-search, .omega-product-search)
+  .omega-search-subfilters
+  > summary {
   cursor: pointer;
   color: var(--omega-accent, #0a9ab3) !important;
   font-size: 0.88rem;
   font-weight: 650;
 }
 
-.omega-company-search .omega-search-subfilters > .omega-form-grid {
+:is(.omega-company-search, .omega-product-search)
+  .omega-search-subfilters
+  > .omega-form-grid {
   margin-top: var(--omega-space-sm, 0.75rem);
 }
 
-.omega-company-search .omega-search-subfilters .af-collapsible {
+:is(.omega-company-search, .omega-product-search)
+  .omega-search-subfilters
+  .af-collapsible {
   margin: 0 !important;
   padding: 0.65rem !important;
   border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
@@ -1414,6 +1425,29 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   color: #fff !important;
   border-color: var(--omega-accent, #0a9ab3);
   background: rgba(10, 154, 179, 0.22);
+}
+
+.omega-product-search
+  .omega-search-results
+  tbody
+  td[title="View product"]
+  > a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.omega-product-search .omega-search-results tbody img {
+  display: block;
+  width: 6rem !important;
+  height: 4.5rem !important;
+  object-fit: cover;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  border-radius: 4px;
+  background: #0a0a0a;
+}
+
+.omega-product-search .omega-search-results td[title="View company"] > a {
+  font-weight: 600;
 }
 
 .omega-search-page .omega-search-results {
