@@ -1234,3 +1234,176 @@ div:has(.omega-record-sources-title) + div + div {
     grid-column: 1 / -1 !important;
   }
 }
+
+/* ==========================================================
+   SEARCH / LISTING PAGES
+   SearchKit tables — CiviCRM 6.10.2
+   Opt in with .omega-search-page inside the Afform.
+   ========================================================== */
+
+.omega-search-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.omega-search-page .omega-search-filters {
+  margin: 0 0 var(--omega-space-md, 1rem) !important;
+  padding: var(--omega-space-md, 1rem) !important;
+}
+
+.omega-search-page .omega-search-filter-toggle {
+  display: inline-grid !important;
+  width: 2.65rem;
+  height: 2.4rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  place-items: center;
+  list-style: none;
+  cursor: pointer;
+  color: var(--omega-accent, #0a9ab3) !important;
+  border: 1px solid rgba(10, 154, 179, 0.55) !important;
+  border-radius: var(--omega-radius-sm, 6px) !important;
+  background: rgba(10, 154, 179, 0.08) !important;
+  box-shadow: none !important;
+}
+
+.omega-search-page .omega-search-filter-toggle::-webkit-details-marker,
+.omega-search-page .omega-search-filter-toggle::before,
+.omega-search-page .omega-search-filter-toggle::after {
+  display: none !important;
+  content: none !important;
+}
+
+.omega-search-page .omega-search-filter-toggle:hover,
+.omega-search-page .omega-search-filter-toggle:focus-visible,
+.omega-search-page .omega-search-filters[open] > .omega-search-filter-toggle {
+  color: #fff !important;
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  background: rgba(10, 154, 179, 0.18) !important;
+}
+
+.omega-search-page .omega-search-filter-toggle:focus-visible {
+  outline: 2px solid rgba(10, 154, 179, 0.38) !important;
+  outline-offset: 2px;
+}
+
+.omega-search-page .omega-search-filter-toggle .crm-i {
+  margin: 0 !important;
+  font-size: 1rem;
+}
+
+.omega-search-page .omega-search-filter-body {
+  margin-top: var(--omega-space-md, 1rem);
+  padding-top: var(--omega-space-md, 1rem);
+  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+}
+
+.omega-search-page .omega-search-results {
+  width: 100%;
+  max-width: none;
+  margin: 0 !important;
+  padding: var(--omega-space-md, 1rem) !important;
+}
+
+.omega-search-page .omega-search-results :is(crm-search-display-table, .crm-search-display-table) {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+}
+
+.omega-search-page .omega-search-results .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.omega-search-page .omega-search-results table {
+  width: 100% !important;
+  max-width: none !important;
+  margin-bottom: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  background: transparent !important;
+}
+
+.omega-search-page .omega-search-results thead th {
+  padding: 0.75rem !important;
+  color: #fff !important;
+  font-weight: 650 !important;
+  vertical-align: bottom !important;
+  border-top: 0 !important;
+  border-bottom: 2px solid rgba(10, 154, 179, 0.65) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+}
+
+.omega-search-page .omega-search-results tbody td {
+  padding: 0.85rem 0.75rem !important;
+  line-height: 1.45;
+  vertical-align: top !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  background: transparent !important;
+}
+
+.omega-search-page .omega-search-results tbody tr:hover > td {
+  background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
+}
+
+.omega-search-page .omega-search-results tbody tr:last-child > td {
+  border-bottom: 0 !important;
+}
+
+.omega-search-page .omega-search-detail-preview {
+  min-width: 18rem;
+  max-width: 42rem;
+  line-height: 1.5;
+}
+
+.omega-search-page .omega-search-readmore {
+  margin-top: 0.45rem;
+}
+
+.omega-search-page .omega-search-readmore > summary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+  cursor: pointer;
+  color: var(--omega-accent, #0a9ab3);
+  font-size: 0.85rem;
+  font-weight: 650;
+  background: transparent !important;
+}
+
+.omega-search-page .omega-search-readmore > summary::-webkit-details-marker {
+  display: none;
+}
+
+.omega-search-page .omega-search-readmore > summary::after {
+  content: "\f078";
+  margin-left: 0.4rem;
+  font-family: "Font Awesome 6 Free", "FontAwesome";
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.omega-search-page .omega-search-readmore[open] > summary::after {
+  content: "\f077";
+}
+
+.omega-search-page .omega-search-detail-full {
+  min-width: 20rem;
+  max-width: 60rem;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  line-height: 1.6;
+  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+}
+
+.omega-search-page .omega-search-detail-full p {
+  margin: 0 0 0.85rem;
+}
+
+.omega-search-page .omega-search-detail-full p:last-child {
+  margin-bottom: 0;
+}
