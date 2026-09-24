@@ -1266,8 +1266,8 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
 
 .omega-search-page .omega-search-header {
   align-items: flex-start;
-  margin: 0 0 1rem;
-  padding: 0.2rem 0 0.85rem;
+  margin: 0 0 1.25rem;
+  padding: 0.2rem 0 0.55rem;
   border: 0;
   border-bottom: 1px solid rgba(10, 154, 179, 0.65);
 }
@@ -1344,6 +1344,47 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   border-radius: 4px;
   background: var(--omega-surface, rgba(255, 255, 255, 0.035));
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.omega-company-search .omega-search-filter-body > .omega-form-grid {
+  align-items: start;
+  gap: var(--omega-space-md, 1rem);
+}
+
+.omega-company-search .omega-search-filter-body > .omega-form-grid + .omega-form-grid {
+  margin-top: var(--omega-space-md, 1rem);
+}
+
+.omega-company-search .omega-form-section {
+  margin: 0 !important;
+}
+
+.omega-company-search .omega-search-subfilters {
+  grid-column: 1 / -1;
+  margin-top: var(--omega-space-sm, 0.75rem) !important;
+  padding: var(--omega-space-sm, 0.75rem) !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.018) !important;
+}
+
+.omega-company-search .omega-search-subfilters > summary {
+  cursor: pointer;
+  color: var(--omega-accent, #0a9ab3) !important;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.omega-company-search .omega-search-subfilters > .omega-form-grid {
+  margin-top: var(--omega-space-sm, 0.75rem);
+}
+
+.omega-company-search .omega-search-subfilters .af-collapsible {
+  margin: 0 !important;
+  padding: 0.65rem !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.022) !important;
 }
 
 .omega-search-page .omega-search-results {
