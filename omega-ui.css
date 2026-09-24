@@ -1267,8 +1267,9 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
 .omega-search-page .omega-search-header {
   align-items: flex-start;
   margin: 0 0 1rem;
-  padding: 0.2rem 0 0;
+  padding: 0.2rem 0 0.85rem;
   border: 0;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.65);
 }
 
 .omega-search-page .omega-search-heading {
@@ -1279,13 +1280,6 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   color: #fff;
   font-size: 1.75rem;
   line-height: 1.2;
-}
-
-.omega-search-page .omega-search-subtitle {
-  margin: 0.4rem 0 0;
-  color: var(--omega-muted, rgba(255, 255, 255, 0.65));
-  font-size: 0.93rem;
-  line-height: 1.45;
 }
 
 .omega-search-page .omega-search-filters {
@@ -1383,7 +1377,7 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
 .omega-search-page .omega-search-results thead th {
   padding: 0.75rem !important;
   color: #fff !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
   font-weight: 650 !important;
   line-height: 1.35 !important;
   vertical-align: bottom !important;
