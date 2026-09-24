@@ -1379,6 +1379,20 @@ div:has(.omega-record-sources-title) + div + div {
   display: none;
 }
 
+.omega-search-page .omega-search-readmore > summary::before {
+  display: none !important;
+  content: none !important;
+}
+
+.omega-search-page .omega-search-readmore-close,
+.omega-search-page .omega-search-readmore[open] .omega-search-readmore-open {
+  display: none;
+}
+
+.omega-search-page .omega-search-readmore[open] .omega-search-readmore-close {
+  display: inline;
+}
+
 .omega-search-page .omega-search-readmore > summary::after {
   content: "\f078";
   margin-left: 0.4rem;
