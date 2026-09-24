@@ -1438,12 +1438,34 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
 
 .omega-product-search .omega-search-results tbody img {
   display: block;
-  width: 6rem !important;
-  height: 4.5rem !important;
-  object-fit: cover;
+  box-sizing: border-box;
+  width: 10rem !important;
+  max-width: none !important;
+  height: 7.5rem !important;
+  padding: 0.25rem;
+  object-fit: contain !important;
+  object-position: center;
   border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
   border-radius: 4px;
   background: #0a0a0a;
+}
+
+.omega-product-search
+  .omega-search-results
+  tbody
+  td.crm-search-col-type-image {
+  width: 10.75rem;
+  min-width: 10.75rem;
+  padding: 0.6rem !important;
+}
+
+.omega-product-search
+  .omega-search-results
+  tbody
+  td.crm-search-col-type-image
+  > span {
+  display: flex;
+  justify-content: center;
 }
 
 .omega-product-search .omega-search-results td[title="View company"] > a {
