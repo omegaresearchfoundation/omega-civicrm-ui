@@ -1256,25 +1256,65 @@ div:has(.omega-record-sources-title) + div + div {
   margin: 0;
 }
 
+/* A compact search header replaces the disconnected generic page heading. */
+body:has(
+  .omega-search-page .omega-search-title:not(.ui-dialog *, .modal *)
+)
+h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
+  display: none !important;
+}
+
+.omega-search-page .omega-search-header {
+  align-items: flex-start;
+  margin: 0 0 1rem;
+  padding: 0.2rem 0 0;
+  border: 0;
+}
+
+.omega-search-page .omega-search-heading {
+  min-width: 0;
+}
+
+.omega-search-page .omega-search-title {
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.omega-search-page .omega-search-subtitle {
+  margin: 0.4rem 0 0;
+  color: var(--omega-muted, rgba(255, 255, 255, 0.65));
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
 .omega-search-page .omega-search-filters {
-  margin: 0 0 var(--omega-space-md, 1rem) !important;
-  padding: var(--omega-space-md, 1rem) !important;
+  margin: 0 0 0.8rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .omega-search-page .omega-search-filter-toggle {
-  display: inline-grid !important;
-  width: 2.65rem;
-  height: 2.4rem;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto;
+  min-height: 34px;
   margin: 0 !important;
-  padding: 0 !important;
-  place-items: center;
+  padding: 0.48rem 0.72rem !important;
   list-style: none;
   cursor: pointer;
-  color: var(--omega-accent, #0a9ab3) !important;
-  border: 1px solid rgba(10, 154, 179, 0.55) !important;
-  border-radius: var(--omega-radius-sm, 6px) !important;
-  background: rgba(10, 154, 179, 0.08) !important;
+  color: #f1f4f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.055) !important;
   box-shadow: none !important;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .omega-search-page .omega-search-filter-toggle::-webkit-details-marker,
@@ -1289,7 +1329,7 @@ div:has(.omega-record-sources-title) + div + div {
 .omega-search-page .omega-search-filters[open] > .omega-search-filter-toggle {
   color: #fff !important;
   border-color: var(--omega-accent, #0a9ab3) !important;
-  background: rgba(10, 154, 179, 0.18) !important;
+  background: rgba(10, 154, 179, 0.12) !important;
 }
 
 .omega-search-page .omega-search-filter-toggle:focus-visible {
@@ -1299,13 +1339,17 @@ div:has(.omega-record-sources-title) + div + div {
 
 .omega-search-page .omega-search-filter-toggle .crm-i {
   margin: 0 !important;
-  font-size: 1rem;
+  color: var(--omega-accent, #0a9ab3);
+  font-size: 0.9rem;
 }
 
 .omega-search-page .omega-search-filter-body {
-  margin-top: var(--omega-space-md, 1rem);
-  padding-top: var(--omega-space-md, 1rem);
-  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  margin-top: 0.75rem;
+  padding: var(--omega-space-md, 1rem);
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  border-radius: 4px;
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .omega-search-page .omega-search-results {
@@ -1339,8 +1383,9 @@ div:has(.omega-record-sources-title) + div + div {
 .omega-search-page .omega-search-results thead th {
   padding: 0.75rem !important;
   color: #fff !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
+  font-size: 13px !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
   vertical-align: bottom !important;
   border-top: 0 !important;
   border-bottom: 2px solid rgba(10, 154, 179, 0.65) !important;
