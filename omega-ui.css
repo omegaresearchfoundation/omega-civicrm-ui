@@ -1409,7 +1409,7 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   background: transparent !important;
 }
 
-.omega-company-search
+:is(.omega-company-search, .omega-organisation-search)
   .omega-search-results
   tbody
   td
@@ -1418,7 +1418,9 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   font-weight: 700;
 }
 
-.omega-company-search .omega-search-results a:has(.fa-globe) {
+:is(.omega-company-search, .omega-organisation-search)
+  .omega-search-results
+  a:has(.fa-globe) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1431,8 +1433,12 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   text-decoration: none !important;
 }
 
-.omega-company-search .omega-search-results a:has(.fa-globe):hover,
-.omega-company-search .omega-search-results a:has(.fa-globe):focus-visible {
+:is(.omega-company-search, .omega-organisation-search)
+  .omega-search-results
+  a:has(.fa-globe):hover,
+:is(.omega-company-search, .omega-organisation-search)
+  .omega-search-results
+  a:has(.fa-globe):focus-visible {
   color: #fff !important;
   border-color: var(--omega-accent, #0a9ab3);
   background: rgba(10, 154, 179, 0.22);
@@ -1684,6 +1690,41 @@ details[af-title]
   align-items: start;
 }
 
+/* Keep the main Filters disclosure, but present its two logical groups as
+   ordinary sections rather than nested collapsible panels. */
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+.omega-search-filter-group {
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+.omega-search-filter-group
+> h4.af-title {
+  margin: 0 0 1rem !important;
+  padding: 0 0 0.55rem !important;
+  color: #fff !important;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.38);
+  font-size: 1.08rem !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+}
+
+afsearch-evidence-of-trade-and-use-search-v2
+details.af-collapsible
+.omega-search-filter-group
+.af-layout-cols {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
 afsearch-evidence-of-trade-and-use-search-v2 af-field,
 afsearch-evidence-of-trade-and-use-search-v2 .crm-af-field,
 afsearch-evidence-of-trade-and-use-search-v2 .form-control,
@@ -1779,6 +1820,10 @@ a[href*="transfer_view_v2"]
   afsearch-evidence-of-trade-and-use-search-v2
   details.af-collapsible
   details[af-title]
+  .af-layout-cols,
+  afsearch-evidence-of-trade-and-use-search-v2
+  details.af-collapsible
+  .omega-search-filter-group
   .af-layout-cols {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1985,6 +2030,19 @@ a[href*="transfer_view_v2"]
   margin-bottom: 0;
 }
 
+/* CiviCRM's rich-text paragraphs otherwise inherit its larger 16px prose rule.
+   Match Illicit Promotion to the 13px table text used by Cases of Abuse. */
+.omega-illicit-search
+:is(.omega-search-detail-preview, .omega-search-detail-full)
+:is(p, li) {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.omega-illicit-search .omega-search-detail-preview p {
+  margin: 0;
+}
+
 
 /* ---------- Evidence map ---------- */
 
@@ -2029,22 +2087,30 @@ a[href*="transfer_view_v2"]
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   padding: 0;
-  color: #fff;
-  background: var(--omega-accent);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: var(--omega-radius-sm);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+  color: var(--omega-accent);
+  background: rgba(24, 29, 36, 0.94);
+  border: 1px solid rgba(10, 154, 179, 0.62);
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.34);
   cursor: pointer;
-  transition: left 0.3s ease, background-color 0.2s ease;
+  font-size: 0.95rem;
+  transition:
+    left 0.3s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .omega-usage-map .omega-map-filter-toggle:hover,
 .omega-usage-map .omega-map-filter-toggle:focus-visible {
   color: #fff;
-  background: #087f94;
+  border-color: var(--omega-accent);
+  background: rgba(10, 154, 179, 0.88);
+  outline: 2px solid rgba(10, 154, 179, 0.35);
+  outline-offset: 2px;
 }
 
 .omega-usage-map .omega-map-filter-toggle.is-open {
@@ -2101,25 +2167,38 @@ a[href*="transfer_view_v2"]
   z-index: 1000;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(10, 154, 179, 0.52);
+  border-radius: 6px;
+  background: rgba(24, 29, 36, 0.94);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.34);
 }
 
 .omega-usage-map #usage-map-zoom button {
-  width: 32px;
-  height: 32px;
-  margin: 2px 0;
+  width: 38px;
+  height: 38px;
+  margin: 0;
   padding: 0;
-  color: #fff;
-  background: var(--omega-accent);
+  color: var(--omega-accent);
+  background: transparent;
   border: 0;
-  border-radius: var(--omega-radius-sm);
+  border-radius: 0;
   cursor: pointer;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 36px;
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+
+.omega-usage-map #usage-map-zoom button + button {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .omega-usage-map #usage-map-zoom button:hover,
 .omega-usage-map #usage-map-zoom button:focus-visible {
-  background: #087f94;
+  color: #fff;
+  background: rgba(10, 154, 179, 0.82);
+  outline: 0;
 }
 
 .omega-usage-map #usage-map-active-filters,
