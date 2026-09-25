@@ -1784,6 +1784,76 @@ a[href*="transfer_view_v2"]
   }
 }
 
+/* Cases of abuse search: the Afform uses the shared search shell while keeping
+   every existing filter and SearchKit binding intact. */
+.omega-case-search .omega-search-filter-body > .omega-case-search-sections {
+  align-items: start;
+  gap: 1.5rem 1.75rem;
+}
+
+.omega-case-search .omega-search-filter-body .omega-form-section {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.omega-case-search .omega-search-filter-body .omega-form-section > h4.af-title {
+  margin-bottom: 0.85rem !important;
+}
+
+.omega-case-search .omega-search-filter-body .omega-form-grid {
+  gap: 0.9rem;
+}
+
+.omega-case-search .omega-search-filter-body .omega-form-grid + .omega-form-grid {
+  margin-top: 0.9rem;
+}
+
+.omega-case-search .omega-search-results table {
+  min-width: 68rem;
+}
+
+.omega-case-search
+  .omega-search-results
+  tbody
+  td[data-field-name="subject"]
+  > a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.omega-case-search .omega-search-results tbody td.crm-search-col-type-image {
+  width: 7rem;
+  min-width: 7rem;
+  padding: 0.6rem !important;
+}
+
+.omega-case-search .omega-search-results tbody td.crm-search-col-type-image > span {
+  display: flex;
+  justify-content: center;
+}
+
+.omega-case-search .omega-search-results tbody img {
+  display: block;
+  box-sizing: border-box;
+  width: 6rem !important;
+  max-width: none !important;
+  height: 6rem !important;
+  padding: 0;
+  object-fit: contain !important;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .omega-case-search .omega-case-search-sections,
+  .omega-case-search .omega-search-filter-body .omega-form-grid--2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .omega-search-page .omega-search-results {
   width: 100%;
   max-width: none;
