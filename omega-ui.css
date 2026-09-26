@@ -2596,3 +2596,276 @@ a[href*="transfer_view_v2"]
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* ==========================================================
+   COUNTRY CONTACT — EVIDENCE OF TRADE AND USE TAB
+   Existing afsearchImports / CiviCRM 6.10.2 markup.
+   Preserve Domestic/Imports, International/Exports and Map.
+   ========================================================== */
+
+#contact-imports {
+  width: 100%;
+  max-width: none;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.4rem;
+  width: 100%;
+  margin: 0 0 1rem !important;
+  padding: 0.25rem 0 0 !important;
+  list-style: none !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--omega-border) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"]::before,
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"]::after {
+  display: none !important;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button {
+  display: block !important;
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.65rem;
+  margin: 0 !important;
+  padding: 0.6rem 0.9rem !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid var(--omega-border) !important;
+  border-bottom: 3px solid transparent !important;
+  border-radius: var(--omega-radius-sm) var(--omega-radius-sm) 0 0 !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  box-shadow: none !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button:not(.active) > a:hover {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.20) !important;
+  border-bottom-color: transparent !important;
+  background: var(--omega-surface-hover) !important;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button.active > a {
+  color: var(--omega-accent) !important;
+  border-color: rgba(10, 154, 179, 0.55) !important;
+  border-bottom-color: var(--omega-accent) !important;
+  background: rgba(10, 154, 179, 0.14) !important;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] > li.crm-tab-button > a > i.crm-i {
+  margin: 0 !important;
+  color: inherit !important;
+}
+
+#contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge:empty {
+  display: none !important;
+}
+
+#contact-imports details.af-collapsible {
+  margin: 0 0 var(--omega-space-md) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#contact-imports details.af-collapsible > summary {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto;
+  min-height: 34px;
+  margin: 0 !important;
+  padding: 0.48rem 0.72rem !important;
+  list-style: none;
+  cursor: pointer;
+  color: #f1f4f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.055) !important;
+  box-shadow: none !important;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+#contact-imports details.af-collapsible > summary::-webkit-details-marker {
+  display: none !important;
+}
+
+#contact-imports details.af-collapsible > summary::after {
+  content: "Filters";
+}
+
+#contact-imports details.af-collapsible > summary:hover,
+#contact-imports details.af-collapsible > summary:focus-visible,
+#contact-imports details.af-collapsible[open] > summary {
+  color: #fff !important;
+  border-color: var(--omega-accent) !important;
+  background: rgba(10, 154, 179, 0.12) !important;
+}
+
+#contact-imports details.af-collapsible > summary > .fa-filter {
+  color: var(--omega-accent) !important;
+  font-size: 0.9rem;
+}
+
+#contact-imports details.af-collapsible > .af-layout-cols {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--omega-space-md);
+  align-items: end;
+  margin-top: 0.75rem !important;
+  padding: var(--omega-space-md) !important;
+  border: 1px solid var(--omega-border) !important;
+  border-radius: 4px !important;
+  background: var(--omega-surface) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+#contact-imports details.af-collapsible > .af-layout-cols > af-field {
+  display: block;
+  min-width: 0;
+  margin: 0 !important;
+}
+
+#contact-imports details.af-collapsible .crm-af-field-label {
+  display: block !important;
+  margin: 0 0 0.35rem !important;
+  color: rgba(255, 255, 255, 0.76) !important;
+  font-size: 0.86rem !important;
+  font-weight: 600 !important;
+}
+
+#contact-imports details.af-collapsible :is(.form-control, .select2-container) {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#contact-imports crm-search-display-table {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+}
+
+#contact-imports .crm-search-display-table {
+  width: 100%;
+  max-width: none;
+  margin: 0 !important;
+  padding: var(--omega-space-md) !important;
+  border: 1px solid var(--omega-border);
+  border-radius: var(--omega-radius-md);
+  background: var(--omega-surface);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#contact-imports .crm-search-display-table > .form-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--omega-space-sm);
+  margin: 0 0 0.65rem;
+}
+
+#contact-imports .crm-search-display-table .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#contact-imports .crm-search-display-table table {
+  width: 100% !important;
+  min-width: 980px;
+  max-width: none !important;
+  margin-bottom: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  background: transparent !important;
+  font-size: 13px;
+}
+
+#contact-imports .crm-search-display-table thead th {
+  padding: 0.75rem !important;
+  color: #fff !important;
+  border-top: 0 !important;
+  border-bottom: 2px solid rgba(10, 154, 179, 0.65) !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+  vertical-align: bottom !important;
+}
+
+#contact-imports .crm-search-display-table tbody td {
+  padding: 0.8rem 0.7rem !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid var(--omega-border) !important;
+  background: transparent !important;
+  font-size: 13px !important;
+  line-height: 1.45;
+  vertical-align: top !important;
+}
+
+#contact-imports .crm-search-display-table tbody tr:hover > td {
+  background: var(--omega-surface-hover) !important;
+}
+
+#contact-imports .crm-search-display-table tbody tr:last-child > td {
+  border-bottom: 0 !important;
+}
+
+#contact-imports .crm-search-display-table tbody td.crm-search-col-type-image {
+  width: 4.5rem;
+  min-width: 4.5rem;
+}
+
+#contact-imports .crm-search-display-table tbody td.crm-search-col-type-image img {
+  display: block;
+  width: 3.25rem !important;
+  height: 3.25rem !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+#contact-imports .crm-search-display-table tbody td.crm-search-col-type-image + td.crm-search-col-type-field {
+  min-width: 16rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 820px) {
+  #contact-imports details.af-collapsible > .af-layout-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #contact-imports .crm-search-display-table > .form-inline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
