@@ -2446,13 +2446,18 @@ a[href*="transfer_view_v2"]
   border-radius: 4px !important;
   background: rgba(255, 255, 255, 0.055) !important;
   box-shadow: none !important;
-  font-size: 0.86rem;
+  font-size: 0.86rem !important;
   font-weight: 600;
   line-height: 1;
 }
 
 #contact-relationship_tab details.af-collapsible > summary::-webkit-details-marker {
   display: none !important;
+}
+
+#contact-relationship_tab details.af-collapsible > summary::before {
+  display: none !important;
+  content: none !important;
 }
 
 #contact-relationship_tab details.af-collapsible > summary::after {
@@ -2707,13 +2712,18 @@ a[href*="transfer_view_v2"]
   border-radius: 4px !important;
   background: rgba(255, 255, 255, 0.055) !important;
   box-shadow: none !important;
-  font-size: 0.86rem;
+  font-size: 0.86rem !important;
   font-weight: 600;
   line-height: 1;
 }
 
 #contact-imports details.af-collapsible > summary::-webkit-details-marker {
   display: none !important;
+}
+
+#contact-imports details.af-collapsible > summary::before {
+  display: none !important;
+  content: none !important;
 }
 
 #contact-imports details.af-collapsible > summary::after {
