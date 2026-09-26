@@ -2850,7 +2850,7 @@ a[href*="transfer_view_v2"]
   font-weight: 700;
 }
 
-#contact-events_tab_countries .crm-search-display-table tbody td[title="View website"] > a {
+#contact-events_tab_countries .crm-search-display-table tbody td[title="View website"] a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
