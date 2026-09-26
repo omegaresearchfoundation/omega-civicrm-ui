@@ -2681,14 +2681,26 @@ a[href*="transfer_view_v2"]
   display: none !important;
 }
 
-#contact-events_tab_countries details[af-title="Arms fair details"],
-#contact-events_tab_countries details[af-title="Organiser details"] {
+#contact-events_tab_countries [af-title="Arms fair details"],
+#contact-events_tab_countries [af-title="Organiser details"] {
   display: block !important;
   min-width: 0;
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
   background: transparent !important;
+}
+
+#contact-events_tab_countries [af-title="Arms fair details"] > h4.af-title,
+#contact-events_tab_countries [af-title="Organiser details"] > h4.af-title {
+  margin: 0 0 0.8rem !important;
+  padding: 0 0 0.55rem !important;
+  color: #f5f7f8 !important;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.6) !important;
+  background: transparent !important;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 #contact-events_tab_countries details[af-title="Arms fair details"] > summary,
@@ -2732,8 +2744,8 @@ a[href*="transfer_view_v2"]
   content: none !important;
 }
 
-#contact-events_tab_countries details[af-title="Arms fair details"] > .af-container,
-#contact-events_tab_countries details[af-title="Organiser details"] > .af-container {
+#contact-events_tab_countries [af-title="Arms fair details"] > .af-container,
+#contact-events_tab_countries [af-title="Organiser details"] > .af-container {
   display: grid !important;
   gap: 0.9rem 1rem;
   padding: 0 !important;
@@ -2741,22 +2753,22 @@ a[href*="transfer_view_v2"]
   background: transparent !important;
 }
 
-#contact-events_tab_countries details[af-title="Arms fair details"] > .af-container {
+#contact-events_tab_countries [af-title="Arms fair details"] > .af-container {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-#contact-events_tab_countries details[af-title="Organiser details"] > .af-container {
+#contact-events_tab_countries [af-title="Organiser details"] > .af-container {
   grid-template-columns: minmax(0, 1fr);
 }
 
-#contact-events_tab_countries details[af-title="Arms fair details"] > .af-container > af-field,
-#contact-events_tab_countries details[af-title="Organiser details"] > .af-container > af-field {
+#contact-events_tab_countries [af-title="Arms fair details"] > .af-container > af-field,
+#contact-events_tab_countries [af-title="Organiser details"] > .af-container > af-field {
   display: block;
   min-width: 0;
   margin: 0 !important;
 }
 
-#contact-events_tab_countries details[af-title] .crm-af-field-label {
+#contact-events_tab_countries [af-title] .crm-af-field-label {
   display: block;
   margin: 0 0 0.35rem !important;
   color: var(--omega-muted, #b8c0ca) !important;
@@ -2765,7 +2777,7 @@ a[href*="transfer_view_v2"]
   line-height: 1.25;
 }
 
-#contact-events_tab_countries details[af-title] :is(.form-control, .select2-container) {
+#contact-events_tab_countries [af-title] :is(.form-control, .select2-container) {
   width: 100% !important;
   max-width: none !important;
 }
@@ -2868,14 +2880,14 @@ a[href*="transfer_view_v2"]
 
 @media (max-width: 980px) {
   #contact-events_tab_countries div[af-fieldset] > details.af-collapsible > .af-layout-cols,
-  #contact-events_tab_countries details[af-title="Arms fair details"] > .af-container {
+  #contact-events_tab_countries [af-title="Arms fair details"] > .af-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 700px) {
   #contact-events_tab_countries div[af-fieldset] > details.af-collapsible > .af-layout-cols,
-  #contact-events_tab_countries details[af-title="Arms fair details"] > .af-container {
+  #contact-events_tab_countries [af-title="Arms fair details"] > .af-container {
     grid-template-columns: minmax(0, 1fr);
   }
 
