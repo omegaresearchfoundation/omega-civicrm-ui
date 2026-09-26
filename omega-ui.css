@@ -2603,6 +2603,272 @@ a[href*="transfer_view_v2"]
 }
 
 /* ==========================================================
+   COUNTRY CONTACT — EVENTS TAB
+   Existing afsearchEventsTabCountries / CiviCRM 6.10.2 markup.
+   ========================================================== */
+
+#contact-events_tab_countries {
+  width: 100%;
+  max-width: none;
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible {
+  margin: 0 0 1rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > summary {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto;
+  min-height: 34px;
+  margin: 0 !important;
+  padding: 0.48rem 0.72rem !important;
+  list-style: none;
+  cursor: pointer;
+  color: #f1f4f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.055) !important;
+  box-shadow: none !important;
+  font-size: 0.86rem !important;
+  font-weight: 600;
+  line-height: 1;
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > summary::-webkit-details-marker,
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > summary::before {
+  display: none !important;
+  content: none !important;
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > summary::after {
+  content: "Filters";
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > summary:hover,
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > summary:focus-visible,
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible[open] > summary {
+  color: #fff !important;
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  background: rgba(10, 154, 179, 0.12) !important;
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > summary > .fa-filter {
+  margin: 0 !important;
+  color: var(--omega-accent, #0a9ab3) !important;
+  font-size: 0.9rem;
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > .af-layout-cols {
+  display: grid !important;
+  grid-template-columns: minmax(0, 2fr) minmax(15rem, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 1rem !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 4px;
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035)) !important;
+}
+
+#contact-events_tab_countries div[af-fieldset] > details.af-collapsible > .af-layout-cols:has(> details[af-title="Exhibitor details"]) {
+  display: none !important;
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"],
+#contact-events_tab_countries details[af-title="Organiser details"] {
+  display: block !important;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"] > summary,
+#contact-events_tab_countries details[af-title="Organiser details"] > summary {
+  display: block !important;
+  margin: 0 0 0.8rem !important;
+  padding: 0 0 0.55rem !important;
+  list-style: none;
+  pointer-events: none;
+  color: #f5f7f8 !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.6) !important;
+  background: transparent !important;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"] > summary::-webkit-details-marker,
+#contact-events_tab_countries details[af-title="Organiser details"] > summary::-webkit-details-marker,
+#contact-events_tab_countries details[af-title="Arms fair details"] > summary::before,
+#contact-events_tab_countries details[af-title="Organiser details"] > summary::before {
+  display: none !important;
+  content: none !important;
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"] > .af-container,
+#contact-events_tab_countries details[af-title="Organiser details"] > .af-container {
+  display: grid !important;
+  gap: 0.9rem 1rem;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"] > .af-container {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#contact-events_tab_countries details[af-title="Organiser details"] > .af-container {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"] > .af-container > af-field,
+#contact-events_tab_countries details[af-title="Organiser details"] > .af-container > af-field {
+  display: block;
+  min-width: 0;
+  margin: 0 !important;
+}
+
+#contact-events_tab_countries details[af-title] .crm-af-field-label {
+  display: block;
+  margin: 0 0 0.35rem !important;
+  color: var(--omega-muted, #b8c0ca) !important;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+#contact-events_tab_countries details[af-title] :is(.form-control, .select2-container) {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#contact-events_tab_countries crm-search-display-table {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+#contact-events_tab_countries .crm-search-display-table {
+  width: 100%;
+  max-width: none;
+  margin: 0 !important;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  border-radius: 10px;
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+#contact-events_tab_countries .crm-search-display-table > .form-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0 0 0.8rem;
+}
+
+#contact-events_tab_countries .crm-search-display-table .table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#contact-events_tab_countries .crm-search-display-table table {
+  width: 100% !important;
+  min-width: 760px;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+}
+
+#contact-events_tab_countries .crm-search-display-table thead th {
+  padding: 0.72rem 0.8rem !important;
+  color: #dce4ea !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.55) !important;
+  border-left: 0 !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+#contact-events_tab_countries .crm-search-display-table tbody td {
+  padding: 0.72rem 0.8rem !important;
+  vertical-align: middle;
+  color: #e7ebef;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.085) !important;
+  border-left: 0 !important;
+  background: transparent !important;
+  font-size: 13px !important;
+  line-height: 1.45;
+}
+
+#contact-events_tab_countries .crm-search-display-table tbody tr:hover > td {
+  background: rgba(10, 154, 179, 0.075) !important;
+}
+
+#contact-events_tab_countries .crm-search-display-table tbody tr:last-child > td {
+  border-bottom: 0 !important;
+}
+
+#contact-events_tab_countries .crm-search-display-table tbody td.crm-search-ctrl-column + td.crm-search-col-type-field a {
+  color: var(--omega-accent, #0a9ab3) !important;
+  font-weight: 700;
+}
+
+#contact-events_tab_countries .crm-search-display-table tbody td[title="View website"] > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  border: 1px solid rgba(10, 154, 179, 0.42);
+  border-radius: 4px;
+  background: rgba(10, 154, 179, 0.08);
+}
+
+#contact-events_tab_countries .crm-search-display-table .crm-search-col-type-menu a[href*="q=civicrm%2Farms-fair#"] {
+  color: var(--omega-accent, #0a9ab3) !important;
+}
+
+@media (max-width: 980px) {
+  #contact-events_tab_countries div[af-fieldset] > details.af-collapsible > .af-layout-cols,
+  #contact-events_tab_countries details[af-title="Arms fair details"] > .af-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  #contact-events_tab_countries div[af-fieldset] > details.af-collapsible > .af-layout-cols,
+  #contact-events_tab_countries details[af-title="Arms fair details"] > .af-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #contact-events_tab_countries .crm-search-display-table > .form-inline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================
    COUNTRY CONTACT — EVIDENCE OF TRADE AND USE TAB
    Existing afsearchImports / CiviCRM 6.10.2 markup.
    Preserve Domestic/Imports, International/Exports and Map.
