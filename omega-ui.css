@@ -2693,11 +2693,13 @@ a[href*="transfer_view_v2"]
 
 #contact-events_tab_countries details[af-title="Arms fair details"] > summary,
 #contact-events_tab_countries details[af-title="Organiser details"] > summary {
-  display: block !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 0 0.8rem !important;
   padding: 0 0 0.55rem !important;
   list-style: none;
-  pointer-events: none;
+  cursor: pointer;
   color: #f5f7f8 !important;
   border: 0 !important;
   border-bottom: 1px solid rgba(10, 154, 179, 0.6) !important;
@@ -2705,6 +2707,21 @@ a[href*="transfer_view_v2"]
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.3;
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"] > summary::after,
+#contact-events_tab_countries details[af-title="Organiser details"] > summary::after {
+  content: "\f054";
+  color: var(--omega-accent, #0a9ab3);
+  font-family: "Font Awesome 5 Free", FontAwesome, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  transition: transform 0.16s ease;
+}
+
+#contact-events_tab_countries details[af-title="Arms fair details"][open] > summary::after,
+#contact-events_tab_countries details[af-title="Organiser details"][open] > summary::after {
+  transform: rotate(90deg);
 }
 
 #contact-events_tab_countries details[af-title="Arms fair details"] > summary::-webkit-details-marker,
