@@ -20,6 +20,401 @@
   --omega-muted: rgba(255, 255, 255, 0.65);
 }
 
+/* ==========================================================
+   IMAGE SEARCH
+   Existing Images_v2 / Image_Search SearchKit grid only.
+   The generated Afform wrapper keeps this treatment isolated.
+   ========================================================== */
+
+body:has(afsearch-image-search-v2) h1.title.crm-page-title {
+  margin: 0.2rem 0 1rem !important;
+  padding: 0 0 0.38rem !important;
+  color: #fff;
+  font-size: 1.75rem !important;
+  line-height: 1.2;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.65);
+}
+
+afsearch-image-search-v2 {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details {
+  margin: 0 0 1rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details > summary {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto;
+  min-height: 34px;
+  margin: 0 !important;
+  padding: 0.48rem 0.72rem !important;
+  list-style: none;
+  cursor: pointer;
+  color: #f1f4f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.055) !important;
+  font-size: 0.86rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+}
+
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > summary::-webkit-details-marker,
+afsearch-image-search-v2 > div[af-fieldset] > details > summary::before {
+  display: none !important;
+  content: none !important;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details > summary::after {
+  content: "Filters";
+  font-family: var(--crm-font, "Manrope", sans-serif);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details > summary .fa-filter {
+  color: var(--omega-accent, #0a9ab3);
+  font-size: 0.9rem;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details[open] > summary {
+  color: #fff !important;
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  background: rgba(10, 154, 179, 0.12) !important;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details > .af-layout-cols {
+  box-sizing: border-box;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: var(--omega-space-md, 1rem) !important;
+  align-items: start;
+  margin: 0 !important;
+  padding: 0 var(--omega-space-md, 1rem) !important;
+  border-right: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-left: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035)) !important;
+}
+
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols:first-of-type {
+  margin-top: 0.75rem !important;
+  padding-top: var(--omega-space-md, 1rem) !important;
+  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 4px 4px 0 0 !important;
+}
+
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols:last-of-type {
+  padding-bottom: var(--omega-space-md, 1rem) !important;
+  border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 0 0 4px 4px !important;
+}
+
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols:last-of-type
+  > .af-layout-cols {
+  display: contents !important;
+}
+
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols
+  > details,
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols
+  > .af-layout-cols
+  > details {
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0.85rem !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+}
+
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols
+  > details
+  > summary,
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols
+  > .af-layout-cols
+  > details
+  > summary {
+  margin: 0 !important;
+  padding: 0.15rem 0 !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 650 !important;
+  background: transparent !important;
+}
+
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols
+  > details[open]
+  > summary,
+afsearch-image-search-v2
+  > div[af-fieldset]
+  > details
+  > .af-layout-cols
+  > .af-layout-cols
+  > details[open]
+  > summary {
+  margin-bottom: 0.85rem !important;
+  padding-bottom: 0.55rem !important;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.5) !important;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details af-field {
+  box-sizing: border-box;
+  min-width: 0;
+  margin-bottom: 0.75rem;
+}
+
+afsearch-image-search-v2 > div[af-fieldset] > details .af-layout-cols {
+  gap: var(--omega-space-sm, 0.75rem) !important;
+}
+
+afsearch-image-search-v2 .crm-search-display {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--omega-space-md, 1rem) !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  border-radius: 6px;
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+afsearch-image-search-v2 .crm-search-display > .form-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--omega-space-md, 1rem);
+  margin: 0 0 var(--omega-space-md, 1rem);
+  padding: 0 0 0.8rem;
+  border-bottom: 1px solid rgba(10, 154, 179, 0.45);
+}
+
+afsearch-image-search-v2 .crm-search-display > .form-inline label {
+  margin: 0;
+  color: #dbe2e7;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+afsearch-image-search-v2 .crm-search-display > .form-inline .pull-right {
+  float: none !important;
+  margin-left: auto;
+}
+
+afsearch-image-search-v2 .crm-search-display > .form-inline .btn {
+  color: #fff !important;
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  border-radius: 4px !important;
+  background: var(--omega-accent, #0a9ab3) !important;
+}
+
+afsearch-image-search-v2 .crm-search-display-grid-container {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: var(--omega-space-md, 1rem) !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
+}
+
+afsearch-image-search-v2 .crm-search-display-grid-container > div {
+  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: column;
+  min-width: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 6px;
+  background: #171b20;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.16);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease,
+    transform 0.16s ease;
+}
+
+afsearch-image-search-v2 .crm-search-display-grid-container > div:hover {
+  border-color: rgba(10, 154, 179, 0.58);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+  transform: translateY(-1px);
+}
+
+afsearch-image-search-v2
+  .crm-search-display-grid-container
+  > div
+  > .crm-search-col-type-image {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  background: #0e1114;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-image > span,
+afsearch-image-search-v2 .crm-search-col-type-image > span > span,
+afsearch-image-search-v2 .crm-search-col-type-image a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-image img {
+  display: block;
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-image:not(:has(img))::before {
+  content: "\f03e";
+  color: rgba(255, 255, 255, 0.22);
+  font-family: "Font Awesome 6 Free", "FontAwesome";
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+afsearch-image-search-v2
+  .crm-search-display-grid-container
+  > div
+  > .crm-search-col-type-field {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100% !important;
+  padding: 0.18rem 1rem;
+  color: #cbd3d9;
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+afsearch-image-search-v2
+  .crm-search-display-grid-container
+  > div
+  > .crm-search-col-type-field.font-bold {
+  min-height: 3.2rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.45rem;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-field .crm-i {
+  width: 1.15rem;
+  margin-right: 0.35rem;
+  color: var(--omega-accent, #0a9ab3);
+  text-align: center;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-field a {
+  color: #31b5ca;
+  text-decoration: none;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-field a:hover,
+afsearch-image-search-v2 .crm-search-col-type-field a:focus-visible {
+  text-decoration: underline;
+}
+
+afsearch-image-search-v2
+  .crm-search-display-grid-container
+  > div
+  > .crm-search-col-type-buttons {
+  box-sizing: border-box;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  width: 100% !important;
+  margin-top: auto !important;
+  padding: 0.8rem 1rem !important;
+  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  background: rgba(255, 255, 255, 0.025);
+}
+
+afsearch-image-search-v2 .crm-search-col-type-buttons > span {
+  display: inline-flex;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-buttons .btn {
+  margin: 0 !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-buttons .btn-primary {
+  color: #fff !important;
+  border-color: var(--omega-accent, #0a9ab3) !important;
+  background: var(--omega-accent, #0a9ab3) !important;
+}
+
+afsearch-image-search-v2 .crm-search-display-pager {
+  margin-top: 1.2rem;
+  padding-top: var(--omega-space-md, 1rem);
+  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+}
+
+@media (max-width: 980px) {
+  afsearch-image-search-v2 .crm-search-display-grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  afsearch-image-search-v2 > div[af-fieldset] > details > .af-layout-cols,
+  afsearch-image-search-v2 .crm-search-display-grid-container {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
 body {
   --crm-font: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --crm-input-label-font: var(--crm-font);
