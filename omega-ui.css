@@ -21,9 +21,9 @@
 }
 
 /* ==========================================================
-   IMAGE SEARCH
-   Existing Images_v2 / Image_Search SearchKit grid only.
-   The generated Afform wrapper keeps this treatment isolated.
+   IMAGE SEARCH AND OPT-IN IMAGE GRIDS
+   Existing Images_v2 / Image_Search plus `.omega-image-grid` wrappers.
+   Generated/explicit wrappers keep this treatment isolated.
    ========================================================== */
 
 body:has(afsearch-image-search-v2) h1.title.crm-page-title {
@@ -103,7 +103,7 @@ afsearch-image-search-v2
   margin-top: var(--omega-space-sm, 0.75rem);
 }
 
-afsearch-image-search-v2 .crm-search-display {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display {
   box-sizing: border-box;
   width: 100%;
   padding: var(--omega-space-md, 1rem) !important;
@@ -113,7 +113,7 @@ afsearch-image-search-v2 .crm-search-display {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
-afsearch-image-search-v2 .crm-search-display > .form-inline {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display > .form-inline {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,26 +123,30 @@ afsearch-image-search-v2 .crm-search-display > .form-inline {
   border-bottom: 1px solid rgba(10, 154, 179, 0.45);
 }
 
-afsearch-image-search-v2 .crm-search-display > .form-inline label {
+.omega-image-grid .crm-search-display > .form-inline:not(:has(*)) {
+  display: none !important;
+}
+
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display > .form-inline label {
   margin: 0;
   color: #dbe2e7;
   font-size: 13px;
   font-weight: 650;
 }
 
-afsearch-image-search-v2 .crm-search-display > .form-inline .pull-right {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display > .form-inline .pull-right {
   float: none !important;
   margin-left: auto;
 }
 
-afsearch-image-search-v2 .crm-search-display > .form-inline .btn {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display > .form-inline .btn {
   color: #fff !important;
   border-color: var(--omega-accent, #0a9ab3) !important;
   border-radius: 4px !important;
   background: var(--omega-accent, #0a9ab3) !important;
 }
 
-afsearch-image-search-v2 .crm-search-display-grid-container {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display-grid-container {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: var(--omega-space-md, 1rem) !important;
@@ -150,7 +154,7 @@ afsearch-image-search-v2 .crm-search-display-grid-container {
   justify-items: stretch !important;
 }
 
-afsearch-image-search-v2 .crm-search-display-grid-container > div {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display-grid-container > div {
   box-sizing: border-box;
   display: flex !important;
   flex-direction: column;
@@ -167,13 +171,13 @@ afsearch-image-search-v2 .crm-search-display-grid-container > div {
     transform 0.16s ease;
 }
 
-afsearch-image-search-v2 .crm-search-display-grid-container > div:hover {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display-grid-container > div:hover {
   border-color: rgba(10, 154, 179, 0.58);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
   transform: translateY(-1px);
 }
 
-afsearch-image-search-v2
+:is(afsearch-image-search-v2, :where(.omega-image-grid))
   .crm-search-display-grid-container
   > div
   > .crm-search-col-type-image {
@@ -190,9 +194,9 @@ afsearch-image-search-v2
   background: #0e1114;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-image > span,
-afsearch-image-search-v2 .crm-search-col-type-image > span > span,
-afsearch-image-search-v2 .crm-search-col-type-image a {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-image > span,
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-image > span > span,
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-image a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,7 +204,7 @@ afsearch-image-search-v2 .crm-search-col-type-image a {
   height: 100%;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-image img {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-image img {
   display: block;
   box-sizing: border-box;
   width: 100% !important;
@@ -212,13 +216,13 @@ afsearch-image-search-v2 .crm-search-col-type-image img {
   background: transparent !important;
 }
 
-afsearch-image-search-v2
+:is(afsearch-image-search-v2, :where(.omega-image-grid))
   .crm-search-col-type-image:not(:has(img))
   > span {
   display: none !important;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-image:not(:has(img))::before {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-image:not(:has(img))::before {
   content: "\f03e";
   color: rgba(255, 255, 255, 0.22);
   font-family: "Font Awesome 6 Free", "FontAwesome";
@@ -226,7 +230,7 @@ afsearch-image-search-v2 .crm-search-col-type-image:not(:has(img))::before {
   font-weight: 400;
 }
 
-afsearch-image-search-v2
+:is(afsearch-image-search-v2, :where(.omega-image-grid))
   .crm-search-display-grid-container
   > div
   > .crm-search-col-type-field {
@@ -240,7 +244,7 @@ afsearch-image-search-v2
   overflow-wrap: anywhere;
 }
 
-afsearch-image-search-v2
+:is(afsearch-image-search-v2, :where(.omega-image-grid))
   .crm-search-display-grid-container
   > div
   > .crm-search-col-type-field.font-bold {
@@ -253,24 +257,24 @@ afsearch-image-search-v2
   line-height: 1.35;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-field .crm-i {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-field .crm-i {
   width: 1.15rem;
   margin-right: 0.35rem;
   color: var(--omega-accent, #0a9ab3);
   text-align: center;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-field a {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-field a {
   color: #31b5ca;
   text-decoration: none;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-field a:hover,
-afsearch-image-search-v2 .crm-search-col-type-field a:focus-visible {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-field a:hover,
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-field a:focus-visible {
   text-decoration: underline;
 }
 
-afsearch-image-search-v2
+:is(afsearch-image-search-v2, :where(.omega-image-grid))
   .crm-search-display-grid-container
   > div
   > .crm-search-col-type-buttons {
@@ -285,38 +289,99 @@ afsearch-image-search-v2
   background: rgba(255, 255, 255, 0.025);
 }
 
-afsearch-image-search-v2 .crm-search-col-type-buttons > span {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-buttons > span {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
   width: 100%;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-buttons > span > span {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-buttons > span > span {
   display: inline-flex;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-buttons .btn {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-buttons .btn {
   margin: 0 !important;
   border-radius: 4px !important;
   font-size: 12px !important;
   line-height: 1.2 !important;
 }
 
-afsearch-image-search-v2 .crm-search-col-type-buttons .btn-primary {
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-col-type-buttons .btn-primary {
   color: #fff !important;
   border-color: var(--omega-accent, #0a9ab3) !important;
   background: var(--omega-accent, #0a9ab3) !important;
 }
 
-afsearch-image-search-v2 .crm-search-display-pager {
+/* Related-image grids use SearchKit's link column rather than a button column.
+   Give that native output the same card footer without changing its routes,
+   targets or actions. */
+.omega-image-grid
+  .crm-search-display-grid-container
+  > div
+  > .crm-search-col-type-links {
+  box-sizing: border-box;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  width: 100% !important;
+  margin-top: auto !important;
+  padding: 0.8rem 1rem !important;
+  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.omega-image-grid .crm-search-col-type-links > span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.omega-image-grid .crm-search-col-type-links > span > span {
+  display: inline-flex;
+}
+
+.omega-image-grid .crm-search-col-type-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 !important;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none !important;
+}
+
+.omega-image-grid .crm-search-col-type-links a.text-warning {
+  border-color: var(--omega-accent, #0a9ab3);
+  background: var(--omega-accent, #0a9ab3);
+}
+
+.omega-image-grid .crm-search-col-type-links a.text-danger {
+  border-color: rgba(208, 62, 91, 0.75);
+  background: rgba(166, 30, 57, 0.88);
+}
+
+.omega-image-grid .crm-search-col-type-links a:hover,
+.omega-image-grid .crm-search-col-type-links a:focus-visible {
+  border-color: rgba(49, 181, 202, 0.9);
+  background: rgba(10, 154, 179, 0.22);
+}
+
+:is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display-pager {
   margin-top: 1.2rem;
   padding-top: var(--omega-space-md, 1rem);
   border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
 }
 
 @media (max-width: 980px) {
-  afsearch-image-search-v2 .crm-search-display-grid-container {
+  :is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display-grid-container {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
@@ -329,8 +394,80 @@ afsearch-image-search-v2 .crm-search-display-pager {
     > .af-container
     > .af-layout-cols,
   afsearch-image-search-v2 .omega-search-subfilter-rows > .af-layout-cols,
-  afsearch-image-search-v2 .crm-search-display-grid-container {
+  :is(afsearch-image-search-v2, :where(.omega-image-grid)) .crm-search-display-grid-container {
     grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* ==========================================================
+   IMAGE RECORD VIEW
+   Opt-in treatment for the main image inside an Omega record card.
+   ========================================================== */
+
+.omega-image-record
+  .crm-search-display-list-container
+  > li
+  > .omega-image-record-media {
+  grid-column: 1 / -1 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 20rem;
+  margin: 0 0 var(--omega-space-md, 1rem) !important;
+  padding: var(--omega-space-md, 1rem) !important;
+  overflow: hidden;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: var(--omega-radius-sm, 6px) !important;
+  background: #0e1114 !important;
+}
+
+.omega-image-record .omega-image-record-media > span,
+.omega-image-record .omega-image-record-media > span > span,
+.omega-image-record .omega-image-record-media a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.omega-image-record .omega-image-record-media img {
+  display: block;
+  width: auto !important;
+  max-width: min(100%, 44rem) !important;
+  height: auto !important;
+  max-height: 68vh;
+  object-fit: contain !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.omega-image-record
+  .crm-search-display-list-container
+  > li
+  > .omega-record-section-row {
+  grid-column: 1 / -1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.omega-image-record .omega-record-section-row h2.omega-record-section-title {
+  margin-top: 0.75rem !important;
+}
+
+.omega-image-record .omega-record-section-row h2.omega-record-section-title--first {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 720px) {
+  .omega-image-record
+    .crm-search-display-list-container
+    > li
+    > .omega-image-record-media {
+    min-height: 14rem;
+    padding: var(--omega-space-sm, 0.75rem) !important;
   }
 }
 
