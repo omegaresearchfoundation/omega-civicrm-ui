@@ -41,166 +41,66 @@ afsearch-image-search-v2 {
   max-width: none;
 }
 
-afsearch-image-search-v2 > div[af-fieldset] > details {
-  margin: 0 0 1rem !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-}
-
-afsearch-image-search-v2 > div[af-fieldset] > details > summary {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 0.45rem;
-  width: auto;
-  min-height: 34px;
-  margin: 0 !important;
-  padding: 0.48rem 0.72rem !important;
-  list-style: none;
-  cursor: pointer;
-  color: #f1f4f6 !important;
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  border-radius: 4px !important;
-  background: rgba(255, 255, 255, 0.055) !important;
-  font-size: 0.86rem !important;
-  font-weight: 600 !important;
-  line-height: 1 !important;
-}
-
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > summary::-webkit-details-marker,
-afsearch-image-search-v2 > div[af-fieldset] > details > summary::before {
-  display: none !important;
-  content: none !important;
-}
-
-afsearch-image-search-v2 > div[af-fieldset] > details > summary::after {
-  content: "Filters";
-  font-family: var(--crm-font, "Manrope", sans-serif);
-  font-size: 0.86rem;
-  font-weight: 600;
-}
-
-afsearch-image-search-v2 > div[af-fieldset] > details > summary .fa-filter {
-  color: var(--omega-accent, #0a9ab3);
-  font-size: 0.9rem;
-}
-
-afsearch-image-search-v2 > div[af-fieldset] > details[open] > summary {
-  color: #fff !important;
-  border-color: var(--omega-accent, #0a9ab3) !important;
-  background: rgba(10, 154, 179, 0.12) !important;
-}
-
-afsearch-image-search-v2 > div[af-fieldset] > details > .af-layout-cols {
-  box-sizing: border-box;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: var(--omega-space-md, 1rem) !important;
+afsearch-image-search-v2 .omega-search-filter-body > .omega-form-grid {
   align-items: start;
-  margin: 0 !important;
-  padding: 0 var(--omega-space-md, 1rem) !important;
-  border-right: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
-  border-left: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
-  background: var(--omega-surface, rgba(255, 255, 255, 0.035)) !important;
+  gap: var(--omega-space-md, 1rem);
 }
 
 afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols:first-of-type {
-  margin-top: 0.75rem !important;
-  padding-top: var(--omega-space-md, 1rem) !important;
-  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
-  border-radius: 4px 4px 0 0 !important;
+  .omega-search-filter-body
+  > .omega-form-grid
+  + .omega-form-grid {
+  margin-top: var(--omega-space-md, 1rem);
 }
 
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols:last-of-type {
-  padding-bottom: var(--omega-space-md, 1rem) !important;
-  border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
-  border-radius: 0 0 4px 4px !important;
-}
-
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols:last-of-type
-  > .af-layout-cols {
+afsearch-image-search-v2 .omega-image-filter-sections {
   display: contents !important;
 }
 
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols
-  > details,
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols
-  > .af-layout-cols
-  > details {
-  box-sizing: border-box;
+afsearch-image-search-v2 .omega-form-section {
   min-width: 0;
   margin: 0 !important;
-  padding: 0.85rem !important;
-  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
-  border-radius: 4px !important;
-  background: transparent !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
 }
 
+afsearch-image-search-v2 .omega-form-section > .af-layout-cols,
 afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols
-  > details
-  > summary,
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols
-  > .af-layout-cols
-  > details
-  > summary {
-  margin: 0 !important;
-  padding: 0.15rem 0 !important;
-  color: #fff !important;
-  font-size: 1rem !important;
-  font-weight: 650 !important;
-  background: transparent !important;
+  .omega-form-section
+  > .af-container
+  > .af-layout-cols {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: var(--omega-space-sm, 0.75rem) !important;
 }
 
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols
-  > details[open]
-  > summary,
-afsearch-image-search-v2
-  > div[af-fieldset]
-  > details
-  > .af-layout-cols
-  > .af-layout-cols
-  > details[open]
-  > summary {
-  margin-bottom: 0.85rem !important;
-  padding-bottom: 0.55rem !important;
-  border-bottom: 1px solid rgba(10, 154, 179, 0.5) !important;
-}
-
-afsearch-image-search-v2 > div[af-fieldset] > details af-field {
+afsearch-image-search-v2 .omega-form-section af-field {
   box-sizing: border-box;
   min-width: 0;
   margin-bottom: 0.75rem;
 }
 
-afsearch-image-search-v2 > div[af-fieldset] > details .af-layout-cols {
+afsearch-image-search-v2 .omega-search-subfilter-rows > .af-layout-cols {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: var(--omega-space-sm, 0.75rem) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+afsearch-image-search-v2
+  .omega-search-subfilter-rows
+  > .af-layout-cols
+  + .af-layout-cols {
+  margin-top: var(--omega-space-sm, 0.75rem) !important;
+}
+
+afsearch-image-search-v2
+  .omega-search-subfilters
+  > .omega-search-subfilter-rows {
+  margin-top: var(--omega-space-sm, 0.75rem);
 }
 
 afsearch-image-search-v2 .crm-search-display {
@@ -312,11 +212,17 @@ afsearch-image-search-v2 .crm-search-col-type-image img {
   background: transparent !important;
 }
 
+afsearch-image-search-v2
+  .crm-search-col-type-image:not(:has(img))
+  > span {
+  display: none !important;
+}
+
 afsearch-image-search-v2 .crm-search-col-type-image:not(:has(img))::before {
   content: "\f03e";
   color: rgba(255, 255, 255, 0.22);
   font-family: "Font Awesome 6 Free", "FontAwesome";
-  font-size: 2.5rem;
+  font-size: 4.25rem;
   font-weight: 400;
 }
 
@@ -380,6 +286,13 @@ afsearch-image-search-v2
 }
 
 afsearch-image-search-v2 .crm-search-col-type-buttons > span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+afsearch-image-search-v2 .crm-search-col-type-buttons > span > span {
   display: inline-flex;
 }
 
@@ -409,7 +322,13 @@ afsearch-image-search-v2 .crm-search-display-pager {
 }
 
 @media (max-width: 720px) {
-  afsearch-image-search-v2 > div[af-fieldset] > details > .af-layout-cols,
+  afsearch-image-search-v2 .omega-search-filter-body > .omega-form-grid,
+  afsearch-image-search-v2 .omega-form-section > .af-layout-cols,
+  afsearch-image-search-v2
+    .omega-form-section
+    > .af-container
+    > .af-layout-cols,
+  afsearch-image-search-v2 .omega-search-subfilter-rows > .af-layout-cols,
   afsearch-image-search-v2 .crm-search-display-grid-container {
     grid-template-columns: minmax(0, 1fr) !important;
   }
@@ -1752,25 +1671,25 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-:is(.omega-company-search, .omega-product-search)
+:is(.omega-company-search, .omega-product-search, .omega-image-search)
   .omega-search-filter-body
   > .omega-form-grid {
   align-items: start;
   gap: var(--omega-space-md, 1rem);
 }
 
-:is(.omega-company-search, .omega-product-search)
+:is(.omega-company-search, .omega-product-search, .omega-image-search)
   .omega-search-filter-body
   > .omega-form-grid
   + .omega-form-grid {
   margin-top: var(--omega-space-md, 1rem);
 }
 
-:is(.omega-company-search, .omega-product-search) .omega-form-section {
+:is(.omega-company-search, .omega-product-search, .omega-image-search) .omega-form-section {
   margin: 0 !important;
 }
 
-:is(.omega-company-search, .omega-product-search) .omega-search-subfilters {
+:is(.omega-company-search, .omega-product-search, .omega-image-search) .omega-search-subfilters {
   grid-column: 1 / -1;
   margin-top: var(--omega-space-sm, 0.75rem) !important;
   padding: var(--omega-space-sm, 0.75rem) !important;
@@ -1779,7 +1698,7 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   background: transparent !important;
 }
 
-:is(.omega-company-search, .omega-product-search)
+:is(.omega-company-search, .omega-product-search, .omega-image-search)
   .omega-search-subfilters
   > summary {
   cursor: pointer;
@@ -1788,13 +1707,13 @@ h1.title.crm-page-title:not(.ui-dialog *, .modal *) {
   font-weight: 650;
 }
 
-:is(.omega-company-search, .omega-product-search)
+:is(.omega-company-search, .omega-product-search, .omega-image-search)
   .omega-search-subfilters
   > .omega-form-grid {
   margin-top: var(--omega-space-sm, 0.75rem);
 }
 
-:is(.omega-company-search, .omega-product-search)
+:is(.omega-company-search, .omega-product-search, .omega-image-search)
   .omega-search-subfilters
   .af-collapsible {
   margin: 0 !important;
