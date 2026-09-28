@@ -402,12 +402,14 @@ afsearch-image-search-v2
 /* ==========================================================
    IMAGE RECORD VIEW
    Opt-in treatment for the main image inside an Omega record card.
+   CiviCRM 6.10.2 does not attach display cssRules to image columns,
+   so retain the explicit class and also target its native image wrapper.
    ========================================================== */
 
 .omega-image-record
   .crm-search-display-list-container
   > li
-  > .omega-image-record-media {
+  > :is(.omega-image-record-media, .crm-search-col-type-image) {
   grid-column: 1 / -1 !important;
   display: flex !important;
   align-items: center;
@@ -422,16 +424,25 @@ afsearch-image-search-v2
   background: #0e1114 !important;
 }
 
-.omega-image-record .omega-image-record-media > span,
-.omega-image-record .omega-image-record-media > span > span,
-.omega-image-record .omega-image-record-media a {
+.omega-image-record
+  :is(.omega-image-record-media, .crm-search-col-type-image)
+  > span,
+.omega-image-record
+  :is(.omega-image-record-media, .crm-search-col-type-image)
+  > span
+  > span,
+.omega-image-record
+  :is(.omega-image-record-media, .crm-search-col-type-image)
+  a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-.omega-image-record .omega-image-record-media img {
+.omega-image-record
+  :is(.omega-image-record-media, .crm-search-col-type-image)
+  img {
   display: block;
   width: auto !important;
   max-width: min(100%, 44rem) !important;
@@ -465,7 +476,7 @@ afsearch-image-search-v2
   .omega-image-record
     .crm-search-display-list-container
     > li
-    > .omega-image-record-media {
+    > :is(.omega-image-record-media, .crm-search-col-type-image) {
     min-height: 14rem;
     padding: var(--omega-space-sm, 0.75rem) !important;
   }
