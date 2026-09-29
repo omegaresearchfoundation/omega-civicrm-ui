@@ -1467,8 +1467,12 @@ ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge:empty {
   padding-top: 1rem;
 }
 
-/* Keep explicitly parallel sections level inside the same grid row. */
-.omega-form-page .omega-form-section + .omega-form-section--parallel {
+/* Keep side-by-side filter sections level inside the same grid row. */
+.omega-form-page
+  .omega-search-filter-body
+  > .omega-form-grid
+  > .omega-form-section
+  + .omega-form-section {
   margin-top: 0;
   padding-top: 0;
   border-top: 0;
