@@ -1467,6 +1467,13 @@ ul.nav.nav-tabs.crm-tab-list[role="tablist"] .badge:empty {
   padding-top: 1rem;
 }
 
+/* Keep explicitly parallel sections level inside the same grid row. */
+.omega-form-page .omega-form-section + .omega-form-section--parallel {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
 .omega-form-page .omega-form-section > h4.af-title {
   margin: 0 0 var(--omega-space-md, 1rem) !important;
   padding: 0 0 0.55rem !important;
