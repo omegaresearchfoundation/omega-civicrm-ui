@@ -3379,6 +3379,7 @@ a[href*="transfer_view_v2"]
 #contact-imports {
   width: 100%;
   max-width: none;
+  overflow-x: hidden;
 }
 
 #contact-imports ul.nav.nav-tabs.crm-tab-list[role="tablist"] {
