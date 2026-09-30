@@ -3552,9 +3552,10 @@ a[href*="transfer_view_v2"]
 
 #contact-imports .crm-search-display-table {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   margin: 0 !important;
   padding: var(--omega-space-md) !important;
+  overflow-x: auto;
   border: 1px solid var(--omega-border);
   border-radius: var(--omega-radius-md);
   background: var(--omega-surface);
