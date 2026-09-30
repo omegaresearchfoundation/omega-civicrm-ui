@@ -3547,6 +3547,7 @@ a[href*="transfer_view_v2"]
   display: block;
   width: 100%;
   min-width: 100%;
+  overflow-x: auto;
 }
 
 #contact-imports .crm-search-display-table {
@@ -3615,14 +3616,14 @@ a[href*="transfer_view_v2"]
 }
 
 #contact-imports .crm-search-display-table tbody td.crm-search-col-type-image {
-  width: 4.5rem;
-  min-width: 4.5rem;
+  width: 7rem;
+  min-width: 7rem;
 }
 
 #contact-imports .crm-search-display-table tbody td.crm-search-col-type-image img {
   display: block;
-  width: 3.25rem !important;
-  height: 3.25rem !important;
+  width: 6rem !important;
+  height: 6rem !important;
   max-width: none !important;
   object-fit: contain !important;
   object-position: center;
