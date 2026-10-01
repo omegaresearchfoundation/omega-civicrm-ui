@@ -3683,3 +3683,14 @@ td:is([data-field-name="Product_details"], [data-field-name="Transfer_details"])
   overflow-wrap: anywhere;
   word-break: normal;
 }
+
+/* ==========================================================
+   PRODUCT PRICE PER UNIT TAB
+   Restore a real table box so the local wrapper owns overflow.
+   ========================================================== */
+
+.omega-product-price-per-unit-tab
+.omega-product-price-per-unit-table-scroll
+table {
+  display: table !important;
+}
