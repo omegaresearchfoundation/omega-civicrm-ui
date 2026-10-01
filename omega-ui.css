@@ -4598,6 +4598,7 @@ a:is(:hover, :focus-visible) {
   #mainTabContainer
   > #contact-summary
   > .crm-contact-summary-row-2-col {
+    flex-direction: column !important;
     flex-wrap: wrap !important;
   }
 
