@@ -4279,3 +4279,20 @@ body.crm-menubar-visible #crm-menubar-toggle-position > a {
 }
 
 /* END CIVICRM GLOBAL MENUBAR */
+
+/* ==========================================================
+   CIVICRM MENUBAR DESKTOP CONTAINMENT
+   Keep transient submenu layout states from allowing the
+   desktop root bar background to cover the page.
+   ========================================================== */
+
+@media (min-width: 783px) {
+  body.crm-menubar-visible #civicrm-menu {
+    max-height: calc(
+      var(--crm-menubar-height, 40px)
+      + var(--crm-menubar-height, 40px)
+    ) !important;
+  }
+}
+
+/* END CIVICRM MENUBAR DESKTOP CONTAINMENT */
