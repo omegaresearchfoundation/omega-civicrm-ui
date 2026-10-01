@@ -4296,3 +4296,380 @@ body.crm-menubar-visible #crm-menubar-toggle-position > a {
 }
 
 /* END CIVICRM MENUBAR DESKTOP CONTAINMENT */
+
+/* ==========================================================
+   CONTACT SUMMARY CONTENT
+   Shared treatment for the native CiviCRM Summary tab. Keep
+   each Contact Layout's configured rows, columns and fields.
+   ========================================================== */
+
+#mainTabContainer > #contact-summary {
+  display: grid;
+  align-content: start;
+  gap: var(--omega-space-md, 1rem);
+}
+
+#mainTabContainer
+> #contact-summary
+> .crm-contact-summary-layout-row {
+  align-items: stretch !important;
+  gap: var(--omega-space-md, 1rem) !important;
+  margin: 0 !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-contact-summary-layout-col {
+  display: grid !important;
+  grid-auto-rows: max-content;
+  align-content: start;
+  gap: var(--omega-space-md, 1rem);
+  min-width: 0;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-contact-summary-layout-col
+> * {
+  min-width: 0;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-contact-summary-layout-col
+> *
+> .crm-summary-block {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0 !important;
+  overflow: hidden;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: var(--omega-radius-sm, 6px) !important;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.02)
+    ) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12) !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-contact-summary-layout-col:has([search-name])
+> * {
+  height: 100%;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-block:has([search-name]) {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  padding: var(--omega-space-md, 1rem) !important;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(10, 154, 179, 0.09),
+      transparent 62%
+    ),
+    rgba(255, 255, 255, 0.025) !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-block:has([search-name])
+[search-name] {
+  max-width: 100%;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-block:has([search-name])
+img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 22rem !important;
+  object-fit: contain !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-contact-summary-layout-col:has(#crm-website-content):has(#crm-email-content):has(#crm-phone-content) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-contact-summary-layout-col:has(#crm-website-content):has(#crm-email-content):has(#crm-phone-content)
+> *:has(#crm-website-content) {
+  grid-column: 1 / -1;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-contact-summary-layout-col
+> *
+> .crm-summary-block:has(> .crm-address-block) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--omega-space-md, 1rem);
+  padding: 0 !important;
+  overflow: visible;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-block:has(> .crm-address-block)
+> .crm-address-block {
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0 !important;
+  overflow: hidden;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  border-radius: var(--omega-radius-sm, 6px) !important;
+  background: var(--omega-surface, rgba(255, 255, 255, 0.035)) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12) !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-block:has(> .crm-address-block)
+> .crm-address-block:has(.add-new) {
+  grid-column: 1 / -1;
+  border-style: dashed !important;
+  box-shadow: none !important;
+}
+
+#mainTabContainer
+> #contact-summary
+:is(.crm-inline-edit, .crm-inline-block-content) {
+  min-width: 0;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-inline-block-content {
+  box-sizing: border-box;
+  padding: 0.5rem !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row {
+  display: grid !important;
+  grid-template-columns: minmax(8.5rem, 34%) minmax(0, 1fr);
+  align-items: stretch;
+  min-width: 0;
+  min-height: 2.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: transparent !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row:last-child {
+  border-bottom: 0;
+}
+
+#mainTabContainer
+> #contact-summary
+.add-new
+.crm-summary-row {
+  display: none !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row
+> :is(.crm-label, .crm-content) {
+  box-sizing: border-box;
+  width: auto !important;
+  min-width: 0;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0.65rem 0.75rem !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row
+> .crm-label {
+  color: var(--omega-muted, rgba(255, 255, 255, 0.65)) !important;
+  font-size: 0.78rem !important;
+  font-weight: 650 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.015em;
+  background: rgba(255, 255, 255, 0.018) !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row
+> .crm-content {
+  overflow-x: visible !important;
+  overflow-wrap: anywhere;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row
+> .crm-content:empty::after {
+  content: "—";
+  color: var(--omega-muted, rgba(255, 255, 255, 0.65));
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row
+> .crm-content
+a {
+  color: var(--omega-accent, #0a9ab3) !important;
+  text-decoration-color: rgba(10, 154, 179, 0.45) !important;
+  text-underline-offset: 0.14em;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-summary-row
+> .crm-content
+a:is(:hover, :focus-visible) {
+  color: #6bd2e2 !important;
+  text-decoration-color: currentColor !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-edit-help {
+  top: 0.35rem !important;
+  right: 0.35rem !important;
+  z-index: 2;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.4rem !important;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: var(--omega-radius-sm, 6px);
+  background: transparent;
+  opacity: 0.62;
+  transition:
+    opacity 120ms ease,
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-edit-help
+.crm-i {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-inline-block-content:is(:hover, :focus-within)
+> .crm-edit-help {
+  border-color: rgba(10, 154, 179, 0.38);
+  background: rgba(10, 154, 179, 0.12);
+  opacity: 1;
+}
+
+#mainTabContainer
+> #contact-summary
+.crm-inline-block-content
+> .crm-edit-help
++ .crm-summary-row
+> .crm-content {
+  padding-right: 2.8rem !important;
+}
+
+@media (max-width: 900px) {
+  #mainTabContainer
+  > #contact-summary
+  > .crm-contact-summary-row-2-col {
+    flex-wrap: wrap !important;
+  }
+
+  #mainTabContainer
+  > #contact-summary
+  > .crm-contact-summary-row-2-col
+  > .crm-contact-summary-layout-col {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+
+  #mainTabContainer
+  > #contact-summary
+  .crm-contact-summary-layout-col:has(#crm-website-content):has(#crm-email-content):has(#crm-phone-content),
+  #mainTabContainer
+  > #contact-summary
+  .crm-summary-block:has(> .crm-address-block) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #mainTabContainer
+  > #contact-summary
+  .crm-contact-summary-layout-col:has([search-name])
+  > * {
+    height: auto;
+  }
+
+  #mainTabContainer
+  > #contact-summary
+  .crm-summary-block:has([search-name]) {
+    min-height: 18rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #mainTabContainer
+  > #contact-summary
+  .crm-summary-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #mainTabContainer
+  > #contact-summary
+  .crm-summary-row
+  > .crm-label {
+    padding-bottom: 0.2rem !important;
+  }
+
+  #mainTabContainer
+  > #contact-summary
+  .crm-summary-row
+  > .crm-content {
+    padding-top: 0.2rem !important;
+    border-left: 0;
+  }
+
+  #mainTabContainer
+  > #contact-summary
+  .crm-inline-block-content
+  > .crm-edit-help
+  + .crm-summary-row
+  > .crm-content {
+    padding-right: 0.75rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mainTabContainer
+  > #contact-summary
+  .crm-edit-help {
+    transition: none;
+  }
+}
+
+/* END CONTACT SUMMARY CONTENT */
