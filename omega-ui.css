@@ -3650,3 +3650,36 @@ a[href*="transfer_view_v2"]
     flex-direction: column;
   }
 }
+
+/* ==========================================================
+   COMPANY LEGACY DATA TAB
+   Narrative-only legacy tables inside the shared search shell.
+   ========================================================== */
+
+.omega-contact-legacy-data-tab .omega-legacy-data-table-scroll {
+  width: 100%;
+  min-width: 0;
+}
+
+.omega-contact-legacy-data-tab .omega-legacy-data-table-scroll table {
+  table-layout: fixed;
+}
+
+.omega-contact-legacy-data-tab
+.omega-legacy-data-table-scroll
+:is(th.crm-search-result-select, td.crm-search-ctrl-column) {
+  width: 3.5rem;
+  min-width: 3.5rem;
+}
+
+.omega-contact-legacy-data-tab
+.omega-legacy-data-table-scroll
+td:is([data-field-name="Product_details"], [data-field-name="Transfer_details"])
+> span {
+  display: block;
+  min-width: 0;
+  line-height: 1.65;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
