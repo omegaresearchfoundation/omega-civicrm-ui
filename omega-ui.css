@@ -4968,6 +4968,10 @@ a:is(:hover, :focus-visible) {
   box-shadow: none !important;
 }
 
+.omega-research-home-company-count .crm-search-display > .form-inline {
+  display: none !important;
+}
+
 .omega-research-home-company-count .crm-search-display-list-container > li {
   margin: 0 !important;
   padding: 0 !important;
@@ -4983,7 +4987,8 @@ a:is(:hover, :focus-visible) {
   text-decoration: none !important;
 }
 
-.omega-research-home-company-count > a {
+.omega-research-home-company-count > a,
+.omega-research-home-company-count > .af-markup:last-child > a {
   color: #fff !important;
   font-size: 12px;
   font-weight: 500;
