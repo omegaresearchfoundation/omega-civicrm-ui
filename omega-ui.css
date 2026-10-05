@@ -4778,6 +4778,8 @@ a:is(:hover, :focus-visible) {
 .omega-research-home-link-grid {
   display: grid !important;
   grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: 8px;
 }
 
@@ -4787,6 +4789,8 @@ a:is(:hover, :focus-visible) {
   justify-content: flex-start;
   gap: 10px;
   min-width: 0;
+  width: 100% !important;
+  height: 100%;
   min-height: 70px;
   margin: 0 !important;
   padding: 11px !important;
@@ -4856,6 +4860,14 @@ a:is(:hover, :focus-visible) {
   grid-template-columns: minmax(0, 1fr);
   gap: 14px;
   min-width: 0;
+}
+
+.omega-research-home-content-grid {
+  align-items: stretch;
+}
+
+.omega-research-home-content-grid > .omega-form-panel {
+  height: 100%;
 }
 
 .omega-research-home-count-grid {
@@ -5107,6 +5119,8 @@ a:is(:hover, :focus-visible) {
 .omega-research-home-add-grid {
   display: grid !important;
   grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: 7px;
 }
 
@@ -5116,6 +5130,8 @@ a:is(:hover, :focus-visible) {
   justify-content: center;
   gap: 0.45rem;
   min-width: 0;
+  width: 100% !important;
+  height: 100%;
   min-height: 39px;
   margin: 0 !important;
   padding: 7px 9px !important;
@@ -5145,7 +5161,7 @@ a:is(:hover, :focus-visible) {
 
   .omega-research-home-content-grid {
     grid-template-columns: minmax(0, 2.15fr) minmax(320px, 0.85fr);
-    align-items: start;
+    align-items: stretch;
   }
 }
 
