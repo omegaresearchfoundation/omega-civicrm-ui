@@ -4828,6 +4828,7 @@ a:is(:hover, :focus-visible) {
 
 .omega-research-home-link-copy {
   display: grid;
+  flex: 1 1 auto;
   min-width: 0;
   gap: 3px;
 }
@@ -4836,6 +4837,8 @@ a:is(:hover, :focus-visible) {
   color: #fff;
   font-size: 13px;
   font-weight: 600;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 
 .omega-research-home-link-copy > small {
@@ -4843,6 +4846,8 @@ a:is(:hover, :focus-visible) {
   font-size: 11px;
   font-weight: 400;
   line-height: 1.25;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
 }
 
 .omega-research-home-review-row,
@@ -4970,6 +4975,11 @@ a:is(:hover, :focus-visible) {
 
 .omega-research-home-company-count .crm-search-display > .form-inline {
   display: none !important;
+}
+
+.omega-research-home-company-count .crm-search-col-type-field {
+  padding: 0 !important;
+  border: 0 !important;
 }
 
 .omega-research-home-company-count .crm-search-display-list-container > li {
