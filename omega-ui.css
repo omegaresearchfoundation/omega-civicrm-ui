@@ -5507,6 +5507,34 @@ a:is(:hover, :focus-visible) {
   line-height: 1.3;
 }
 
+.omega-scattershot-dashboard a.omega-scattershot-stat-card--link {
+  position: relative;
+  padding-inline-end: 34px;
+  border-color: rgba(10, 154, 179, .45);
+  text-decoration: none;
+}
+
+.omega-scattershot-dashboard a.omega-scattershot-stat-card--link:hover,
+.omega-scattershot-dashboard a.omega-scattershot-stat-card--link:focus-visible {
+  border-color: var(--omega-accent, #0a9ab3);
+  background: rgba(10, 154, 179, .13);
+}
+
+.omega-scattershot-dashboard a.omega-scattershot-stat-card--link:focus-visible {
+  outline: 2px solid var(--omega-accent, #0a9ab3);
+  outline-offset: 2px;
+}
+
+.omega-scattershot-stat-card--link .omega-scattershot-link-arrow {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-end: 13px;
+  color: var(--omega-accent, #0a9ab3);
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1;
+}
+
 .omega-scattershot-overview-lower {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
