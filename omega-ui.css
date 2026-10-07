@@ -5707,3 +5707,8 @@ a:is(:hover, :focus-visible) {
     flex: 1 1 auto;
   }
 }
+
+/* Scattershot campaign dashboard follow-up — equal-width Overview actions. */
+.omega-scattershot-dashboard .omega-scattershot-add-grid > .btn {
+  max-width: none !important;
+}
