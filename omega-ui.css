@@ -2419,10 +2419,15 @@ a[href*="transfer_view_v2"]
   vertical-align: top !important;
   border-top: 0 !important;
   border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+}
+
+/* SearchKit's conditional background classes keep their native theme colours.
+   Uncoloured cells remain transparent so row-level colours show through. */
+.omega-search-page .omega-search-results tbody td:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)) {
   background: transparent !important;
 }
 
-.omega-search-page .omega-search-results tbody tr:hover > td {
+.omega-search-page .omega-search-results tbody tr:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)):hover > td:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)) {
   background: var(--omega-surface-hover, rgba(255, 255, 255, 0.06)) !important;
 }
 
