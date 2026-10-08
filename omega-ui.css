@@ -5862,6 +5862,10 @@ a:is(:hover, :focus-visible) {
   font-weight: 600;
 }
 
+#contact-imports .omega-country-trade-map #usage-collapsible-panel.is-open ~ #usage-map-active-filters {
+  display: none;
+}
+
 @media (max-width: 650px) {
   #contact-imports .omega-country-trade-export-filters .omega-search-filter-group .af-layout-cols {
     grid-template-columns: minmax(0, 1fr);
