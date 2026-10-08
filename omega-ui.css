@@ -5740,3 +5740,50 @@ a:is(:hover, :focus-visible) {
 .omega-scattershot-dashboard .omega-scattershot-add-grid > .btn {
   max-width: none !important;
 }
+
+/* Visible map direction switch; only the Country trade/use record tab uses it. */
+#contact-imports .omega-country-trade-mode {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  display: inline-flex;
+  gap: 3px;
+  max-width: calc(100% - 72px);
+  padding: 3px;
+  border: 1px solid rgba(10, 154, 179, 0.62);
+  border-radius: 6px;
+  background: rgba(24, 29, 36, 0.94);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.34);
+}
+
+#contact-imports .omega-country-trade-mode button {
+  min-width: 72px;
+  min-height: 34px;
+  margin: 0;
+  padding: 0.35rem 0.7rem;
+  color: #e0e0e0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: var(--crm-font);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+#contact-imports .omega-country-trade-mode button:hover,
+#contact-imports .omega-country-trade-mode button:focus-visible {
+  color: #fff;
+  background: rgba(10, 154, 179, 0.38);
+  outline: 2px solid rgba(10, 154, 179, 0.55);
+  outline-offset: -2px;
+}
+
+#contact-imports .omega-country-trade-mode button.is-active {
+  color: #fff;
+  background: var(--omega-accent);
+}
