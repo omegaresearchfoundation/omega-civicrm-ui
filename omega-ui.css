@@ -5968,3 +5968,80 @@ a:is(:hover, :focus-visible) {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+
+/* Review-queue narrative cells use the same disclosure control outside
+   the full .omega-search-page wrapper. */
+.crm-container table.omega-review-table .omega-search-detail-preview,
+.crm-container table.omega-review-table .omega-search-detail-full {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+.crm-container table.omega-review-table
+:is(.omega-search-detail-preview, .omega-search-detail-full)
+:is(p, li) {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+.crm-container table.omega-review-table .omega-search-detail-preview p {
+  margin: 0;
+}
+.crm-container table.omega-review-table
+.omega-search-detail-preview:has(+ .omega-search-readmore[open]) {
+  display: none;
+}
+.crm-container table.omega-review-table .omega-search-readmore {
+  margin-top: .45rem;
+}
+.crm-container table.omega-review-table .omega-search-readmore > summary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 !important;
+  list-style: none;
+  cursor: pointer;
+  color: var(--omega-accent, #0a9ab3) !important;
+  font-size: 13px !important;
+  font-weight: 650;
+  line-height: 1.5 !important;
+  background: transparent !important;
+}
+.crm-container table.omega-review-table
+.omega-search-readmore > summary::-webkit-details-marker {
+  display: none;
+}
+.crm-container table.omega-review-table .omega-search-readmore > summary::before {
+  display: none !important;
+  content: none !important;
+}
+.crm-container table.omega-review-table .omega-search-readmore-close,
+.crm-container table.omega-review-table
+.omega-search-readmore[open] .omega-search-readmore-open {
+  display: none !important;
+}
+.crm-container table.omega-review-table
+.omega-search-readmore[open] .omega-search-readmore-close {
+  display: inline !important;
+}
+.crm-container table.omega-review-table .omega-search-readmore > summary::after {
+  content: "\f078";
+  margin-left: .4rem;
+  font-family: "Font Awesome 6 Free", "FontAwesome";
+  font-size: .7rem;
+  font-weight: 900;
+}
+.crm-container table.omega-review-table
+.omega-search-readmore[open] > summary::after {
+  content: "\f077";
+}
+.crm-container table.omega-review-table .omega-search-detail-full {
+  min-width: 20rem;
+  max-width: 60rem;
+  margin-top: .65rem;
+  padding-top: .65rem;
+  border-top: 1px solid var(--omega-border, rgba(255, 255, 255, .1));
+}
+.crm-container table.omega-review-table .omega-search-detail-full p {
+  margin: 0 0 .85rem;
+}
+.crm-container table.omega-review-table .omega-search-detail-full p:last-child {
+  margin-bottom: 0;
+}
