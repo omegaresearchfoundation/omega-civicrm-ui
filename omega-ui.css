@@ -5893,3 +5893,79 @@ a:is(:hover, :focus-visible) {
   }
 }
 
+
+/* ==========================================================
+   REVIEW QUEUE TABLES
+   Opt in per SearchDisplay with omega-review-table.
+   Keep page scrolling and native conditional backgrounds.
+   ========================================================== */
+.crm-container :not(.omega-search-results) > crm-search-display-table > .crm-search-display-table:has(> table.omega-review-table) {
+  margin: 0 0 1rem;
+  padding: var(--omega-space-md, 1rem);
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, .1));
+  border-radius: var(--omega-radius-md, 8px);
+  background: var(--omega-surface, #111);
+}
+.crm-container .crm-search-display-table:has(> table.omega-review-table) > .form-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-bottom: 1rem;
+}
+.crm-container table.omega-review-table {
+  display: table !important;
+  width: 100% !important;
+  min-width: 64rem;
+  margin-bottom: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  background: transparent !important;
+  font-size: 13px;
+}
+.crm-container table.omega-review-table > thead > tr > th {
+  padding: .75rem !important;
+  color: #fff !important;
+  background: var(--crm-c-background3, #222831) !important;
+  border-top: 0 !important;
+  border-bottom: 2px solid rgba(10, 154, 179, .65) !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+  vertical-align: bottom !important;
+}
+.crm-container table.omega-review-table > tbody > tr > td {
+  padding: .8rem .75rem !important;
+  border-top: 0 !important;
+  border-bottom: 1px solid var(--omega-border, rgba(255, 255, 255, .1)) !important;
+  font-size: 13px !important;
+  line-height: 1.45;
+  vertical-align: top !important;
+}
+.crm-container table.omega-review-table > tbody > tr > td:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)) {
+  background: transparent !important;
+}
+.crm-container table.omega-review-table > tbody > tr:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)):hover > td:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)) {
+  background: var(--omega-surface-hover, rgba(255, 255, 255, .06)) !important;
+}
+.crm-container table.omega-review-table > tbody > tr:last-child > td {
+  border-bottom: 0 !important;
+}
+.crm-container table.omega-review-table th.omega-review-name,
+.crm-container table.omega-review-table td:has(> span > a.omega-review-name) {
+  min-width: 13rem;
+  width: 22%;
+  overflow-wrap: anywhere;
+}
+.crm-container table.omega-review-table .omega-review-date {
+  white-space: nowrap;
+}
+.crm-container table.omega-review-table th.omega-review-notes,
+.crm-container table.omega-review-table td.omega-review-notes {
+  min-width: 11rem;
+}
+.crm-container table.omega-review-table td.omega-review-notes .crm-search-field-value {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
