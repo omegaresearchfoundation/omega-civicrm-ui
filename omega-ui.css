@@ -21,6 +21,23 @@
 }
 
 /* ==========================================================
+   OMEGA NATIVE LINK AND BUTTON COLOURS
+   Use semantic theme settings; keep the shared blue palette,
+   dropdown/input colours and image sizing under theme control.
+   ========================================================== */
+
+:root {
+  --crm-link-color: var(--omega-accent, #0a9ab3);
+  --crm-link-hover-color: #47c3d6;
+  --crm-primary-color: var(--omega-accent, #0a9ab3);
+  --crm-primary-hover-color: #22b4cd;
+  --crm-primary-text-color: #000;
+  --crm-primary-hover-text-color: #000;
+  --crm-btn-info-bg-color: var(--omega-accent, #0a9ab3);
+  --crm-btn-info-text-color: #000;
+}
+
+/* ==========================================================
    IMAGE SEARCH AND OPT-IN IMAGE GRIDS
    Existing Images_v2 / Image_Search plus `.omega-image-grid` wrappers.
    Generated/explicit wrappers keep this treatment isolated.
