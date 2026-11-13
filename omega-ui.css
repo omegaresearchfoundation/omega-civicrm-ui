@@ -6062,3 +6062,111 @@ a:is(:hover, :focus-visible) {
 .crm-container table.omega-review-table .omega-search-detail-full p:last-child {
   margin-bottom: 0;
 }
+
+
+/* ==========================================================
+   OMEGA NOTE RECORD — HTML note content
+   Opt-in Afform wrapper and SearchKit HTML field only.
+   Uses native HTML purification; no core Note-page overrides.
+   ========================================================== */
+
+.omega-note-record .omega-note-body > span > span[ng-bind-html] {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.omega-note-record .omega-note-body :is(h1, h2, h3, h4, h5, h6) {
+  margin: 1.2em 0 0.65em !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: inherit;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.omega-note-record .omega-note-body :is(h1, h2) { font-size: 1.3rem; }
+.omega-note-record .omega-note-body h3 { font-size: 1.15rem; }
+.omega-note-record .omega-note-body :is(h4, h5, h6) { font-size: 1rem; }
+
+.omega-note-record .omega-note-body table {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.85rem 0 1.1rem !important;
+  border-collapse: collapse;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10));
+  background: transparent;
+  color: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.omega-note-record .omega-note-body table :is(th, td) {
+  padding: 0.7rem 0.85rem !important;
+  border: 1px solid var(--omega-border, rgba(255, 255, 255, 0.10)) !important;
+  vertical-align: top;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  background: transparent;
+  color: inherit;
+}
+
+.omega-note-record .omega-note-body table th {
+  background: rgba(10, 154, 179, 0.12) !important;
+  color: #e4f6f9;
+  font-weight: 600;
+}
+
+.omega-note-record .omega-note-body table tr {
+  background: transparent !important;
+}
+
+.omega-note-record .omega-note-body :is(ul, ol) {
+  margin: 0.7em 0 1em !important;
+  padding-inline-start: 1.6em !important;
+}
+
+.omega-note-record .omega-note-body li {
+  margin: 0.25em 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+.omega-note-record .omega-note-body a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.omega-note-record .omega-note-body a:focus-visible {
+  outline: 2px solid var(--omega-accent, #0a9ab3);
+  outline-offset: 3px;
+}
+
+.omega-note-record .omega-note-body img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.omega-note-record .omega-note-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* The native linked field drops its class when empty. Anchor
+   its full-width placement to the explicit related-content heading. */
+.omega-note-record .omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(.omega-note-related-title) + div {
+  grid-column: 1 / -1 !important;
+}
+
+.omega-note-record .omega-record-content.omega-record-columns
+.crm-search-display-list-container > li > div:has(a.cancel) {
+  grid-column: 1 / -1;
+}
