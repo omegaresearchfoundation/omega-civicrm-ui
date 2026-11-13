@@ -3072,13 +3072,17 @@ a[href*="transfer_view_v2"]
   padding: 0.85rem 0.75rem !important;
   border-top: 0 !important;
   border-bottom: 1px solid var(--omega-border) !important;
-  background: transparent !important;
   font-size: 13px !important;
   line-height: 1.45;
   vertical-align: top !important;
 }
 
-#contact-relationship_tab .crm-search-display-table tbody tr:hover > td {
+/* Preserve native SearchKit conditional cell and row colours, including inactive relationships. */
+#contact-relationship_tab .crm-search-display-table tbody td:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)) {
+  background: transparent !important;
+}
+
+#contact-relationship_tab .crm-search-display-table tbody tr:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)):hover > td:where(:not(.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger)) {
   background: var(--omega-surface-hover) !important;
 }
 
